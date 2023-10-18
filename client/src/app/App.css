@@ -7,11 +7,6 @@
   pointer-events: none;
 }
 
-nav li { /* Added */
-  display: inline;
-  margin: 1rem;
-}
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-float infinite 3s ease-in-out;
@@ -42,3 +37,14 @@ nav li { /* Added */
     transform: translateY(0px);
   }
 }
+
+/** START added */
+nav li {
+  display: inline;
+  margin: 1rem;
+}
+
+a.active {
+  color: red;
+}
+/** END added **/
