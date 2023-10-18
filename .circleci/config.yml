@@ -1,0 +1,72 @@
+# CircleCI config file
+version: 2.1
+
+orbs:
+  lighthouse-check: foo-software/lighthouse-check@0.0.8
+  codecov: codecov/codecov@3.2.5
+  node: circleci/node@5.1.0
+
+# Define the jobs we want to run for this project
+jobs:
+  lint:
+    executor: node/default
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - run: npm run lint
+  build:
+    executor: node/default
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - run: npm run build
+  test:
+    executor: node/default
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - run: npm test
+  deploy:
+    executor: node/default
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - run: npm run build
+      - run: npm run deploy:netlify
+  lighthouse:
+    executor: lighthouse-check/default
+    steps:
+      - lighthouse-check/audit:
+          urls: https://www.foo.software,https://www.foo.software/contact
+  codecov:
+    executor: node/default
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - run: npm run test:coverage
+      - codecov/upload:
+          file: "./coverage/clover.xml"
+
+# Orchestrate our job run sequence
+workflows:
+  lint_build_test_deploy:
+    jobs:
+      - lint
+      - build:
+          requires:
+            - lint
+      - test:
+          requires:
+            - build
+      - deploy:
+          requires:
+            - test
+  analyze:
+    jobs:
+      - lighthouse
+      - codecov
