@@ -1,0 +1,9 @@
+{
+  "name": "template-mern-app",
+  "version": "1.0.0",
+  "description": "Template for a full-stack MERN app",
+  "scripts": {
+    "test": "cd server && npm test & cd ../client && npm test",
+    "start": "cd server && npm start && cd ../client && npm start"
+  }
+}

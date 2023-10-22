@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
-  "main": "server.ts",
+  "main": "server.mjs",
   "scripts": {
     "start": "node server.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
