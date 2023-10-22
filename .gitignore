@@ -28,6 +28,3 @@ build
 
 # Miscellaneous
 *.local
-
-# Security
-config.env*
