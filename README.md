@@ -8,3 +8,9 @@ Template for a full-stack [MERN](https://www.mongodb.com/mern-stack#:~:text=MERN
 npm start #[sequential] run server 'start', run client 'start'
 npm test #[parallel] run server 'test', run client 'test'
 ```
+
+## Development
+
+### Environment Variables
+
+- **ACTION REQUIRED: Create 'config.env' in '/server', following ['config.sample-env'](server/config.sample-env) structure**
