@@ -5,12 +5,14 @@ Template for a full-stack [MERN](https://www.mongodb.com/mern-stack#:~:text=MERN
 ## Scripts
 
 ```shell
-npm start #[sequential] run server 'start', run client 'start'
-npm test #[parallel] run server 'test', run client 'test'
+npm start #[sequential] run server 'start' THEN run client 'start'
+npm test #[parallel] run server 'test' AND run client 'test'
 ```
 
 ## Development
 
 ### Environment Variables
 
-- **ACTION REQUIRED: Create 'config.env' in '/server', following ['config.sample-env'](server/config.sample-env) structure**
+- Configure environment variables.
+  - Create 'server/config.env' with ['config.sample-env'](server/config.sample-env) structure.
+  - Use built-in environment variables (i.e. for Netlify)
