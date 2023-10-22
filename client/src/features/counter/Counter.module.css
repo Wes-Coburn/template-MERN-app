@@ -9,7 +9,8 @@
   margin-right: 8px;
 }
 
-.row { /*:not(:last-child)*/
+.row {
+  /*:not(:last-child)*/
   margin-bottom: 16px;
 }
 
