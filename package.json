@@ -4,6 +4,12 @@
   "description": "Template for a full-stack MERN app",
   "scripts": {
     "test": "cd server && npm test & cd ../client && npm test",
-    "start": "cd server && npm start && cd ../client && npm start"
+    "start:server": "cd server && npm start",
+    "start:client": "cd client && npm start",
+    "install-update": "npm i && ncu && ncu -u && npm i",
+    "install-update-all": "npm run install-update && cd server && npm run install-update && cd ../client && npm run install-update"
+  },
+  "devDependencies": {
+    "npm-check-updates": "^16.14.6"
   }
 }

@@ -12,6 +12,6 @@ try {
   console.error(e);
 }
 
-let db = conn.db("sample_training");
+let db = conn.db("password_manager");
 
 export default db;

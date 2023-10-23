@@ -11,6 +11,13 @@ npm test #[parallel] run server 'test' AND run client 'test'
 
 ## Development
 
+### Packages
+
+```shell
+# install all packages and update
+npm run install-and-update
+```
+
 ### Environment Variables
 
 - Configure environment variables.
