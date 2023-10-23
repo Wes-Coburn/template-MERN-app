@@ -2,24 +2,19 @@
 
 Template for a full-stack [MERN](https://www.mongodb.com/mern-stack#:~:text=MERN%20stands%20for%20MongoDB%2C%20Express,a%20client%2Dside%20JavaScript%20framework) app (MongoDB + Express + React + Node)
 
-## Scripts
-
-```shell
-npm start #[sequential] run server 'start' THEN run client 'start'
-npm test #[parallel] run server 'test' AND run client 'test'
-```
-
 ## Development
 
-### Packages
+> **TODO:** Create 'server/config.env' with ['config.sample-env'](server/config.sample-env) structure.
+
+### Scripts
 
 ```shell
-# install all packages and update
-npm run install-and-update
+# install and update all packages
+npm run install-update-all
+
+#[sequential] run server 'start' THEN run client 'start'
+npm start
+
+#[parallel] run server 'test' AND run client 'test'
+npm test
 ```
-
-### Environment Variables
-
-- Configure environment variables.
-  - Create 'server/config.env' with ['config.sample-env'](server/config.sample-env) structure.
-  - Use built-in environment variables (i.e. for Netlify)
