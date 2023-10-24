@@ -5,14 +5,14 @@ import { ObjectId } from "mongodb";
 const notes_collection = "notes";
 const router = express.Router();
 
-// This section will help you get a list of all the records.
+// get all notes
 router.get("/", async (_req, res) => {
   let collection = db.collection(notes_collection);
   let results = await collection.find({}).toArray();
   res.send(results).status(200);
 });
 
-// This section will help you get a single record by id
+// get note by id
 router.get("/:id", async (req, res) => {
   let collection = db.collection(notes_collection);
   let query = {_id: new ObjectId(req.params.id)};
@@ -22,7 +22,7 @@ router.get("/:id", async (req, res) => {
   else res.send(result).status(200);
 });
 
-// This section will help you create a new record.
+// create note
 router.post("/", async (req, res) => {
   let newDocument = {
     name: req.body.name,
@@ -34,7 +34,7 @@ router.post("/", async (req, res) => {
   res.send(result).status(204);
 });
 
-// This section will help you update a record by id.
+// update note
 router.patch("/:id", async (req, res) => {
   const query = { _id: new ObjectId(req.params.id) };
   const updates =  {
@@ -50,7 +50,7 @@ router.patch("/:id", async (req, res) => {
   res.send(result).status(200);
 });
 
-// This section will help you delete a record
+// delete note
 router.delete("/:id", async (req, res) => {
   const query = { _id: new ObjectId(req.params.id) };
 
