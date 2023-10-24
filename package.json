@@ -12,5 +12,8 @@
   },
   "devDependencies": {
     "npm-check-updates": "^16.14.6"
-  }
+  },
+  "engines": {
+    "node": ">=18.18.0 <19.0.0"
+  }  
 }
