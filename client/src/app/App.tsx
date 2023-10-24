@@ -5,7 +5,7 @@ import {
   NavLink,
 } from "react-router-dom";
 import logo from "../assets/logo.svg";
-import Counter from "../features/counter/Counter";
+import Counter from "../features/Counter";
 import ROUTES from "./routes";
 import "./App.css";
 

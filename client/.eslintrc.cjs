@@ -19,7 +19,6 @@ module.exports = {
   },
   ignorePatterns: ["dist", "build", ".eslintrc.cjs", "vite.config.ts"],
   rules: {
-    "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
     "react-refresh/only-export-components": "warn",
     "prettier/prettier": [
