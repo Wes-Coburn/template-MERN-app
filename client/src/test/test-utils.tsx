@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import { cleanup, render } from "@testing-library/react";
 import { afterEach } from "vitest";
 
@@ -13,6 +14,7 @@ function customRender(ui: JSX.Element, options = {}) {
   });
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export * from "@testing-library/react";
 export { default as userEvent } from "@testing-library/user-event";
 // override render export

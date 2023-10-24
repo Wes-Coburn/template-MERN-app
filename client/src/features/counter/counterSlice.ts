@@ -1,3 +1,5 @@
+/* eslint-disable import/no-cycle */
+/* eslint-disable no-param-reassign  */
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState, AppThunk } from "../../app/store";
 import fetchCount from "./counterAPI";

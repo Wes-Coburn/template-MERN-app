@@ -8,7 +8,8 @@
   "scripts": {
     "start": "node server.mjs",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "install-update": "npm i && ncu && ncu -u && npm i"
+    "lint": "echo \"Error: no linter specified\" && exit 1",
+    "i-ncu": "npm i && ncu && ncu -u && npm i"
   },
   "dependencies": {
     "cors": "^2.8.5",
