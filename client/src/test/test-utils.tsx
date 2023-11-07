@@ -1,6 +1,8 @@
-/* eslint-disable import/no-extraneous-dependencies */
-import { cleanup, render } from "@testing-library/react";
-import { afterEach } from "vitest";
+import { cleanup, render, waitFor } from '@testing-library/react';
+import { afterEach } from 'vitest';
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { store } from '../app/store';
 
 afterEach(() => {
   cleanup();
@@ -9,13 +11,16 @@ afterEach(() => {
 function customRender(ui: JSX.Element, options = {}) {
   return render(ui, {
     // wrap provider(s) here if needed
-    wrapper: ({ children }) => children,
+    wrapper: ({ children }) => (
+      <Provider store={store}>
+        <Router>{children}</Router>
+      </Provider>
+    ),
     ...options,
   });
 }
 
-// eslint-disable-next-line react-refresh/only-export-components
-export * from "@testing-library/react";
-export { default as userEvent } from "@testing-library/user-event";
+export * from '@testing-library/react';
+export { default as userEvent } from '@testing-library/user-event';
 // override render export
-export { customRender as render };
+export { customRender as render, waitFor };

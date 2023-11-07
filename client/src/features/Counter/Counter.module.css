@@ -1,3 +1,7 @@
+.Counter {
+  grid-area: middle;
+}
+
 .row {
   display: flex;
   align-items: center;

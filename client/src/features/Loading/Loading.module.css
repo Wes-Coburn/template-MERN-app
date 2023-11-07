@@ -1,0 +1,45 @@
+.Loading {
+  font-size: var(--font-size-400);
+  font-style: italic;
+}
+
+.Loading::before {
+  content: "---";
+}
+
+.Loading::after {
+  content: "---";
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .Loading::after {
+    animation: Loading-tick infinite 2s ease-in-out;
+  }
+  .Loading::before {
+    animation: Loading-tick infinite 2s ease-in-out;
+  }
+}
+
+@keyframes Loading-tick {
+  from {
+    content: "---";
+  }
+  15% {
+    content: "--";
+  }
+  30% {
+    content: "-";
+  }
+  45% {
+    content: "";
+  }
+  60% {
+    content: "-";
+  }
+  75% {
+    content: "--";
+  }
+  to {
+    content: "---";
+  }
+}

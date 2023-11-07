@@ -6,26 +6,29 @@ module.exports = {
     "airbnb",
     "airbnb-typescript",
     "airbnb/hooks",
-    "plugin:import/recommended",
-    "plugin:@typescript-eslint/recommended",
     "plugin:vitest/recommended",
-    "plugin:prettier/recommended",
+    "plugin:prettier/recommended"
   ],
-  plugins: ["react-refresh"],
   parser: "@typescript-eslint/parser",
   parserOptions: {
-    project: "./tsconfig.json",
+    project: true,
     tsconfigRootDir: __dirname,
   },
   ignorePatterns: ["dist", "build", ".eslintrc.cjs", "vite.config.ts"],
   rules: {
     "react/react-in-jsx-scope": "off",
-    "react-refresh/only-export-components": "warn",
+    "import/no-extraneous-dependencies": "off",
+    "react/jsx-key": "error",
     "prettier/prettier": [
       "error",
       {
-        endOfLine: "auto",
-      },
-    ],
+        "endOfLine": "auto"
+      }
+    ]
   },
+  settings: {
+    react: {
+      version: "detect"
+    }
+  }
 };

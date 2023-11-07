@@ -6,6 +6,9 @@ export default defineConfig({
   plugins: [react()],
   server: {
     open: true,
+    hmr: {
+      overlay: false,
+    },
   },
   build: {
     outDir: "build",

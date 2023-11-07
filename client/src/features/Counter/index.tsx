@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useAppSelector, useAppDispatch } from "../../app/hooks";
+import { useState } from 'react';
+import { useAppSelector, useAppDispatch } from '../../app/hooks';
 import {
   decrement,
   increment,
@@ -7,18 +7,18 @@ import {
   incrementAsync,
   incrementIfOdd,
   selectCount,
-} from "./counterSlice";
-import styles from "./Counter.module.css";
+} from './counterSlice';
+import styles from './Counter.module.css';
 
 export default function Counter() {
   const count = useAppSelector(selectCount);
   const dispatch = useAppDispatch();
-  const [incrementAmount, setIncrementAmount] = useState("2");
+  const [incrementAmount, setIncrementAmount] = useState('2');
 
   const incrementValue = Number(incrementAmount) || 0;
 
   return (
-    <div>
+    <div className={styles.Counter}>
       <div className={styles.row}>
         <button
           type="button"
@@ -45,6 +45,8 @@ export default function Counter() {
           value={incrementAmount}
           onChange={(e) => setIncrementAmount(e.target.value)}
         />
+      </div>
+      <div className={styles.row}>
         <button
           type="button"
           className={styles.button}

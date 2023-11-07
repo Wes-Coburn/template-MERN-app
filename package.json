@@ -6,14 +6,18 @@
     "start:server": "cd server && npm start",
     "start:client": "cd client && npm start",
     "test": "cd server && npm test & cd ../client && npm test",
-    "lint": "cd server && npm run lint & cd ../client && npm run lint",
+    "format": "cd server && npm run format & cd ../client && npm run format",
     "i-ncu": "npm i && ncu && ncu -u && npm i",
     "install-update": "npm run i-ncu && cd server && npm run i-ncu && cd ../client && npm run i-ncu"
   },
   "devDependencies": {
-    "npm-check-updates": "^16.14.6"
+    "@typescript-eslint/eslint-plugin": "^6.10.0",
+    "@typescript-eslint/parser": "^6.10.0",
+    "eslint": "^8.53.0",
+    "npm-check-updates": "^16.14.6",
+    "typescript": "^5.2.2"
   },
   "engines": {
     "node": ">=18.18.0 <19.0.0"
-  }  
+  }
 }

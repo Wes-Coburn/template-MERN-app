@@ -1,0 +1,38 @@
+:root {
+  font-size: 62.5%;
+
+  --font-size-200: 1rem;
+  --font-size-300: 1.2rem;
+  --font-size-400: 1.6rem; /* 16px, base */
+  --font-size-500: 2rem;
+  --font-size-600: 2.4rem;
+  --font-size-700: 2.8rem;
+  --font-size-800: 3.2rem;
+  --font-size-900: 3.6rem;
+
+  --font-size-800-plus: calc(var(--font-size-800) + 2vmin);
+}
+
+h1 {
+  font-size: var(--font-size-800-plus);
+}
+
+h2 {
+  font-size: var(--font-size-600);
+}
+
+h3 {
+  font-size: var(--font-size-500);
+}
+
+h4 {
+  font-size: var(--font-size-400);
+}
+
+h5 {
+  font-size: var(--font-size-300);
+}
+
+h6 {
+  font-size: var(--font-size-200);
+}

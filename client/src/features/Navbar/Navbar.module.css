@@ -1,0 +1,12 @@
+.Navbar {
+  width: 100%;
+}
+
+.Active-link {
+  color: red;
+}
+
+.ul li {
+  display: inline;
+  margin: 1rem;
+}
