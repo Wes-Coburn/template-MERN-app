@@ -2,13 +2,12 @@
 
 [@Wes-Coburn](https://github.com/Wes-Coburn)
 
-<<<<<<< Updated upstream
 ```shell
 npx degit Wes-Coburn/template-MERN-app my-app
 ```
 
-___
-=======
+---
+
 ## Technologies
 
 - Node
@@ -27,10 +26,6 @@ ___
 
 - Create 'server/config.env' with ['config.sample-env'](server/config.sample-env) structure.
 - Update [manifest.json](/client/manifest.json)
-- Update <meta> tags in [index.html](/client/index.html)
-  - ```<meta name="description" content="UPDATE ME">```
-  - ```<meta name="author" content="UPDATE ME">```
->>>>>>> Stashed changes
 
 ## Description
 
