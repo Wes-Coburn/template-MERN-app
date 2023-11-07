@@ -8,6 +8,10 @@ npx degit Wes-Coburn/template-MERN-app my-app
 
 ---
 
+## Description
+
+-> Template for a full-stack [MERN](https://www.mongodb.com/mern-stack#:~:text=MERN%20stands%20for%20MongoDB%2C%20Express,a%20client%2Dside%20JavaScript%20framework) app (MongoDB + Express + React + Node)
+
 ## Technologies
 
 - Node
@@ -26,22 +30,6 @@ npx degit Wes-Coburn/template-MERN-app my-app
 
 - Create 'server/config.env' with ['config.sample-env'](server/config.sample-env) structure.
 - Update [manifest.json](/client/manifest.json)
-
-## Description
-
--> Template for a full-stack [MERN](https://www.mongodb.com/mern-stack#:~:text=MERN%20stands%20for%20MongoDB%2C%20Express,a%20client%2Dside%20JavaScript%20framework) app (MongoDB + Express + React + Node).
-
-## Technologies
-
-- React
-- React Testing Library
-- Redux
-- React-Router
-- Node
-- Express
-- MongoDB (Atlas)
-- Vite
-- Vitest
 
 ## Scripts
 
