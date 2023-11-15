@@ -3,6 +3,7 @@ import { ErrorBoundary } from 'react-error-boundary';
 import { lazy, Suspense } from 'react';
 import Heading from '../features/Heading';
 import Loading from '../features/Loading';
+import Error from '../features/Error';
 import * as appInfo from '../../manifest.json';
 import './App.css';
 
@@ -14,22 +15,17 @@ export function AppContent() {
   return (
     <div className="App">
       <Heading pageUrl="" pageTitle={appInfo.name} />
-      <ErrorBoundary fallback={<h1>Oops! Something went wrong.</h1>}>
-        <div className="Grid-top">
-          <Suspense fallback={<Loading />}>
-            <Header />
-          </Suspense>
-        </div>
-        <div className="Grid-mid">
-          <Suspense fallback={<Loading />}>
-            <Main />
-          </Suspense>
-        </div>
-        <div className="Grid-btm">
-          <Suspense fallback={<Loading />}>
-            <Footer />
-          </Suspense>
-        </div>
+
+      <ErrorBoundary fallback={<Error />}>
+        <Suspense fallback={<Loading classNames={['Grid-top']} />}>
+          <Header />
+        </Suspense>
+        <Suspense fallback={<Loading classNames={['Grid-mid']} />}>
+          <Main />
+        </Suspense>
+        <Suspense fallback={<Loading classNames={['Grid-btm']} />}>
+          <Footer />
+        </Suspense>
       </ErrorBoundary>
     </div>
   );

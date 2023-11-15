@@ -1,7 +1,20 @@
 {
   "short_name": "MERN",
-  "name": "Template MERN App",
+  "name": "MERN App",
+  "description": "Template for a MERN app",
+  "id": "/?source=pwa",
+  "start_url": "/?source=pwa",
+  "display_override": ["window-controls-overlay"],
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#3367D6",
+  "background_color": "#3367D6",
   "icons": [
+    {
+      "src": "/src/assets/logo.svg",
+      "type": "image/svg+xml",
+      "sizes": "150x150"
+    },
     {
       "src": "/images/icons-vector.svg",
       "type": "image/svg+xml",
@@ -18,29 +31,6 @@
       "sizes": "512x512"
     }
   ],
-  "id": "/?source=pwa",
-  "start_url": "/?source=pwa",
-  "background_color": "#3367D6",
-  "display": "standalone",
-  "scope": "/",
-  "theme_color": "#3367D6",
-  "shortcuts": [
-    {
-      "name": "How's weather today?",
-      "short_name": "Today",
-      "description": "View weather information for today",
-      "url": "/today?source=pwa",
-      "icons": [{ "src": "/images/today.png", "sizes": "192x192" }]
-    },
-    {
-      "name": "How's weather tomorrow?",
-      "short_name": "Tomorrow",
-      "description": "View weather information for tomorrow",
-      "url": "/tomorrow?source=pwa",
-      "icons": [{ "src": "/images/tomorrow.png", "sizes": "192x192" }]
-    }
-  ],
-  "description": "Template for a MERN app",
   "screenshots": [
     {
       "src": "/images/screenshot1.png",
@@ -53,6 +43,15 @@
       "type": "image/jpg",
       "sizes": "720x540",
       "form_factor": "wide"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "All Notes",
+      "short_name": "Notes",
+      "description": "View all notes",
+      "url": "/notes?source=pwa",
+      "icons": [{ "src": "/src/assets/logo.svg", "sizes": "192x192" }]
     }
   ]
 }

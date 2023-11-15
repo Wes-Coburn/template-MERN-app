@@ -1,37 +1,48 @@
 import { lazy } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import ROUTES from '../../app/routes';
-/* import styles from "./Main.module.css"; */
+import FindNote from '../Notes/FindNote';
+import styles from './Main.module.css';
+import NewNote from '../Notes/NewNote';
 
+const Login = lazy(() => import('../Login'));
+const Home = lazy(() => import('../Home'));
 const NotesList = lazy(() => import('../Notes/NotesList'));
 const NotFound = lazy(() => import('../NotFound'));
 
-const replaceMeText = (text: string) => (
-  <h1>
-    &quot;
-    {text}
-    &quot;
-  </h1>
-);
-
 export default function Main() {
   return (
-    <main role="main">
+    <main role="main" className={styles.Main}>
       <Routes>
-        <Route path={ROUTES.root()} element={<NotesList />} />
+        {/* /login */}
         <Route
-          path={ROUTES.allNotes()}
-          element={replaceMeText(ROUTES.allNotes())}
+          path={ROUTES.ROOT()}
+          element={<Navigate to={ROUTES.login()} replace />}
         />
-        <Route
-          path={ROUTES.getNoteById(0)}
-          element={replaceMeText(ROUTES.getNoteById(0))}
-        />
-        <Route
-          path={ROUTES.newNote()}
-          element={replaceMeText(ROUTES.newNote())}
-        />
-        <Route path={ROUTES.error()} element={<NotFound />} />
+        <Route path={ROUTES.login()} element={<Login />} />
+
+        {/* /user */}
+        <Route path={ROUTES.user()}>
+          <Route
+            path={ROUTES.ROOT()} /* reroute empty userIds to <Login /> */
+            element={<Navigate to={`/${ROUTES.login()}`} replace />}
+          />
+          {/* /:userId */}
+          <Route path=":userId">
+            <Route
+              path={ROUTES.ROOT()} /* Reroute to <Home /> */
+              element={<Navigate to={ROUTES.home()} replace />}
+            />
+            {/* user routes */}
+            <Route path={ROUTES.home()} element={<Home />} />
+            <Route path={ROUTES.allNotes()} element={<NotesList />} />
+            <Route path={ROUTES.findNote()} element={<FindNote />} />
+            <Route path={ROUTES.newNote()} element={<NewNote />} />
+          </Route>
+        </Route>
+
+        {/* not found [404] route */}
+        <Route path={ROUTES.NOT_FOUND()} element={<NotFound />} />
       </Routes>
     </main>
   );

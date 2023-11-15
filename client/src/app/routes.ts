@@ -1,9 +1,15 @@
 const ROUTES = {
-  root: () => '',
+  /* Universal routes */
+  ROOT: () => '',
+  NOT_FOUND: () => '*',
+  COMBINE: (params: Array<string>) => `${params?.join('/')}`,
+  /* Page routes */
+  login: () => 'login',
+  user: () => 'user',
+  home: () => 'home',
   allNotes: () => 'notes',
-  getNoteById: (id: number) => `notes/${id}`,
-  newNote: () => 'notes/new-note',
-  error: () => '*',
+  findNote: () => 'find-note',
+  newNote: () => 'new-note',
 };
 
 export default ROUTES;

@@ -1,9 +1,17 @@
 import styles from './Loading.module.css';
 
-export default function Loading() {
+type Props = {
+  classNames?: Array<string>;
+};
+
+export default function Loading({ classNames }: Props) {
   return (
-    <p>
+    <p className={[classNames].join(' ')}>
       <span className={styles.Loading}> Loading </span>
     </p>
   );
 }
+
+Loading.defaultProps = {
+  classNames: '',
+};

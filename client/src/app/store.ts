@@ -18,3 +18,7 @@ export type AppThunk<ReturnType = void> = ThunkAction<
   unknown,
   Action<string>
 >;
+
+export interface ThunkStatus {
+  status: 'pending' | 'idle' | 'failed';
+}

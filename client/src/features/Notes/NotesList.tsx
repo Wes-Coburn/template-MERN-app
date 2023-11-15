@@ -1,13 +1,21 @@
+/* eslint-disable no-underscore-dangle */
+import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { selectNotes, getAllNotes } from './notesSlice';
-/* import styles from "./NoteList.module.css"; */
+import Note from './Note';
+import NotFound from '../NotFound';
 
 export default function NotesList() {
   const notes = useAppSelector(selectNotes);
   const dispatch = useAppDispatch();
 
-  dispatch(() => getAllNotes()); // UPDATE THIS TO WORK
+  useEffect(() => {
+    dispatch(getAllNotes());
+  }, [dispatch]);
 
-  const notesList = notes.map((note) => <p key={note.id}>{note.value}</p>);
-  return <div>{notes.length > 0 ? notesList : 'Notes List'}</div>;
+  const notesList = notes.map((note) => (
+    <Note key={note._id} text={note.text} />
+  ));
+
+  return notesList.length > 0 ? <div>{notesList}</div> : <NotFound />;
 }

@@ -1,31 +1,27 @@
 /* eslint-disable no-param-reassign */
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 // eslint-disable-next-line import/no-cycle
-import { RootState } from '../../app/store';
+import { RootState, ThunkStatus } from '../../app/store';
+import API from '../../app/api';
 
 export interface Note {
-  id: number;
-  value: string;
+  _id: string;
+  text: string;
 }
 
-export interface NotesState {
+export interface NotesState extends ThunkStatus {
   value: Array<Note>;
-  status: 'idle' | 'loading' | 'failed';
 }
 
 const initialState: NotesState = {
-  value: [
-    { id: 1, value: 'note-1' },
-    { id: 2, value: 'note-2' },
-    { id: 3, value: 'note-3' },
-  ],
+  value: [],
   status: 'idle',
 };
 
 export const getAllNotes = createAsyncThunk('notes/getAllNotes', async () => {
-  const response = await fetch('http://localhost:5050/note');
+  const response = await fetch(API.getAllNotes());
   const jsonResponse = await response.json();
-  return jsonResponse.data;
+  return jsonResponse;
 });
 
 export const notesSlice = createSlice({
@@ -35,11 +31,11 @@ export const notesSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getAllNotes.pending, (state) => {
-        state.status = 'loading';
+        state.status = 'pending';
       })
       .addCase(getAllNotes.fulfilled, (state, action) => {
         state.status = 'idle';
-        state.value = action.payload; // CHANGE THIS TO ACCEPT PROPER PAYLOAD
+        state.value = action.payload;
       })
       .addCase(getAllNotes.rejected, (state) => {
         state.status = 'failed';
@@ -48,7 +44,6 @@ export const notesSlice = createSlice({
 });
 
 // export const {} = notesSlice.actions;
-
 export const selectNotes = (state: RootState) => state.notes.value;
-
+export const selectNotesStatus = (state: RootState) => state.notes.status;
 export default notesSlice.reducer;

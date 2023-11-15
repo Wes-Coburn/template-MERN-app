@@ -5,6 +5,7 @@ type Props = {
   pageUrl: string;
   pageTitle?: string;
   appDescription?: string;
+  themeColor?: string;
   iconUrl?: string;
   iconAlt?: string;
 };
@@ -13,6 +14,7 @@ export default function Heading({
   pageUrl,
   pageTitle,
   appDescription,
+  themeColor,
   iconUrl,
   iconAlt,
 }: Props) {
@@ -22,6 +24,7 @@ export default function Heading({
       <title>{pageTitle}</title>
       <link rel="canonical" href={pageUrl} />
       <meta name="description" content={appDescription} />
+      <meta name="theme-color" content={themeColor} />
 
       {/* Schema.org Microdata */}
       <meta itemProp="name" content={pageTitle} />
@@ -49,6 +52,7 @@ export default function Heading({
 Heading.defaultProps = {
   pageTitle: appInfo.name,
   appDescription: appInfo.description,
+  themeColor: appInfo.theme_color,
   iconUrl: appInfo.icons[0].src,
   iconAlt: 'app icon alt text',
 };

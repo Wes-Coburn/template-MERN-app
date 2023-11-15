@@ -5,13 +5,15 @@ import styles from './Navbar.module.css';
 const activeLink = 'Active-link';
 
 export default function Navbar() {
+  const userId = `TEST_USER`; // REPLACE ME WITH AUTHENTICATION
+
   return (
-    <nav className={styles.Navbar} role="navigation">
+    <nav className={styles.Navbar} role="navigation" aria-label="Primary">
       <ul className={styles.ul}>
         <li>
           <NavLink
             className={({ isActive }) => (isActive ? styles[activeLink] : '')}
-            to={ROUTES.root()}
+            to={ROUTES.COMBINE([ROUTES.user(), userId])}
           >
             Home
           </NavLink>
@@ -19,7 +21,7 @@ export default function Navbar() {
         <li>
           <NavLink
             className={({ isActive }) => (isActive ? styles[activeLink] : '')}
-            to={ROUTES.allNotes()}
+            to={ROUTES.COMBINE([ROUTES.user(), userId, ROUTES.allNotes()])}
             end
           >
             All Notes
@@ -28,9 +30,17 @@ export default function Navbar() {
         <li>
           <NavLink
             className={({ isActive }) => (isActive ? styles[activeLink] : '')}
-            to={ROUTES.getNoteById(0)}
+            to={ROUTES.COMBINE([ROUTES.user(), userId, ROUTES.findNote()])}
           >
             Find Note
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            className={({ isActive }) => (isActive ? styles[activeLink] : '')}
+            to={ROUTES.COMBINE([ROUTES.user(), userId, ROUTES.newNote()])}
+          >
+            New Note
           </NavLink>
         </li>
       </ul>

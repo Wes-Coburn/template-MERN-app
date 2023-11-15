@@ -4,7 +4,7 @@ import styles from './Header.module.css';
 
 export default function Header() {
   return (
-    <header className="Flex-col-center" role="banner">
+    <header role="banner">
       <img src={logo} className={styles['App-logo']} alt="logo" />
       <h1>Note-Taker App</h1>
       <Navbar />
