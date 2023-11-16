@@ -23,7 +23,7 @@ export default function FindNote() {
   const noteId = searchParams.get('noteId');
   const foundNote = notes.find((note) => note._id === noteId);
 
-  if (foundNote === undefined) return <NotFound />;
+  if (foundNote === undefined) return <NotFound />; // TODO: figure out why, action is dispatched from NotesList
 
   switch (notesState) {
     case 'pending':

@@ -1,10 +1,10 @@
 import { BrowserRouter as Router } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
 import { lazy, Suspense } from 'react';
+import { PATHS } from './routes';
 import Heading from '../features/Heading';
 import Loading from '../features/Loading';
 import Error from '../features/Error';
-import * as appInfo from '../../manifest.json';
 import './App.css';
 
 const Header = lazy(() => import('../features/Header'));
@@ -14,16 +14,16 @@ const Footer = lazy(() => import('../features/Footer'));
 export function AppContent() {
   return (
     <div className="App">
-      <Heading pageUrl="" pageTitle={appInfo.name} />
+      <Heading pageURL={PATHS.ROOT()} />
 
       <ErrorBoundary fallback={<Error />}>
-        <Suspense fallback={<Loading classNames={['Grid-top']} />}>
+        <Suspense fallback={<Loading classNames={['Grid-top header']} />}>
           <Header />
         </Suspense>
-        <Suspense fallback={<Loading classNames={['Grid-mid']} />}>
+        <Suspense fallback={<Loading classNames={['Grid-mid main']} />}>
           <Main />
         </Suspense>
-        <Suspense fallback={<Loading classNames={['Grid-btm']} />}>
+        <Suspense fallback={<Loading classNames={['Grid-btm footer']} />}>
           <Footer />
         </Suspense>
       </ErrorBoundary>

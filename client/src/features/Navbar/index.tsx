@@ -2,7 +2,8 @@ import { NavLink } from 'react-router-dom';
 import ROUTES from '../../app/routes';
 import styles from './Navbar.module.css';
 
-const activeLink = 'Active-link';
+const activeLink = ({ isActive }: { isActive: boolean }) =>
+  isActive ? styles['Active-link'] : '';
 
 export default function Navbar() {
   const userId = `TEST_USER`; // REPLACE ME WITH AUTHENTICATION
@@ -11,35 +12,22 @@ export default function Navbar() {
     <nav className={styles.Navbar} role="navigation" aria-label="Primary">
       <ul className={styles.ul}>
         <li>
-          <NavLink
-            className={({ isActive }) => (isActive ? styles[activeLink] : '')}
-            to={ROUTES.COMBINE([ROUTES.user(), userId])}
-          >
+          <NavLink className={activeLink} to={ROUTES.getHome(userId)}>
             Home
           </NavLink>
         </li>
         <li>
-          <NavLink
-            className={({ isActive }) => (isActive ? styles[activeLink] : '')}
-            to={ROUTES.COMBINE([ROUTES.user(), userId, ROUTES.allNotes()])}
-            end
-          >
+          <NavLink className={activeLink} to={ROUTES.getAllNotes(userId)}>
             All Notes
           </NavLink>
         </li>
         <li>
-          <NavLink
-            className={({ isActive }) => (isActive ? styles[activeLink] : '')}
-            to={ROUTES.COMBINE([ROUTES.user(), userId, ROUTES.findNote()])}
-          >
+          <NavLink className={activeLink} to={ROUTES.getFindNote(userId)}>
             Find Note
           </NavLink>
         </li>
         <li>
-          <NavLink
-            className={({ isActive }) => (isActive ? styles[activeLink] : '')}
-            to={ROUTES.COMBINE([ROUTES.user(), userId, ROUTES.newNote()])}
-          >
+          <NavLink className={activeLink} to={ROUTES.getNewNote(userId)}>
             New Note
           </NavLink>
         </li>

@@ -16,6 +16,7 @@ module.exports = {
   },
   ignorePatterns: ["dist", "build", ".eslintrc.cjs", "vite.config.ts"],
   rules: {
+    "no-constant-binary-expression": "error",
     "react/react-in-jsx-scope": "off",
     "import/no-extraneous-dependencies": "off",
     "react/jsx-key": "error",

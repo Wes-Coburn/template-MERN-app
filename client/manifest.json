@@ -16,30 +16,30 @@
       "sizes": "150x150"
     },
     {
-      "src": "/images/icons-vector.svg",
+      "src": "/src/assets/icons-vector.svg",
       "type": "image/svg+xml",
       "sizes": "512x512"
     },
     {
-      "src": "/images/icons-192.png",
+      "src": "/src/assets/icons-192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/images/icons-512.png",
+      "src": "/src/assets/icons-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
   "screenshots": [
     {
-      "src": "/images/screenshot1.png",
+      "src": "/src/assets/screenshot1.png",
       "type": "image/png",
       "sizes": "540x720",
       "form_factor": "narrow"
     },
     {
-      "src": "/images/screenshot2.jpg",
+      "src": "/src/assets/screenshot2.jpg",
       "type": "image/jpg",
       "sizes": "720x540",
       "form_factor": "wide"
@@ -47,11 +47,11 @@
   ],
   "shortcuts": [
     {
-      "name": "All Notes",
-      "short_name": "Notes",
-      "description": "View all notes",
-      "url": "/notes?source=pwa",
-      "icons": [{ "src": "/src/assets/logo.svg", "sizes": "192x192" }]
+      "name": "Login Page",
+      "short_name": "Login",
+      "description": "Login to your account",
+      "url": "/login?source=pwa",
+      "icons": [{ "src": "/src/assets/logo.svg", "sizes": "150x150" }]
     }
   ]
 }
