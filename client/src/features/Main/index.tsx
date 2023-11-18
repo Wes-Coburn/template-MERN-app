@@ -4,6 +4,7 @@ import ROUTES, { PATHS } from '../../app/routes';
 import FindNote from '../Notes/FindNote';
 import styles from './Main.module.css';
 import NewNote from '../Notes/NewNote';
+import { isMobileDevice } from '../../app/responsive';
 
 const Login = lazy(() => import('../Login'));
 const Home = lazy(() => import('../Home'));
@@ -13,6 +14,7 @@ const NotFound = lazy(() => import('../NotFound'));
 export default function Main() {
   return (
     <main role="main" className={styles.Main}>
+      {isMobileDevice() ? <p>[Mobile]</p> : <p>[Desktop]</p>}
       <Routes>
         {/* /ROOT [redirect -->] /login */}
         <Route

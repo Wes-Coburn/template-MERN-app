@@ -2,22 +2,19 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
 import { lazy, Suspense } from 'react';
 import { PATHS } from './routes';
-// import Heading from '../features/Heading';
-// import Loading from '../features/Loading';
-// import Error from '../features/Error';
+import Heading from '../features/Heading';
+import Loading from '../features/Loading';
+import Error from '../features/Error';
+import responsive from './responsive';
 import './App.css';
 
-// Code Splitting
-const Heading = lazy(() => import('../features/Heading'));
-const Loading = lazy(() => import('../features/Loading'));
-const Error = lazy(() => import('../features/Error'));
-
-// Necessarily Lazy
 const Header = lazy(() => import('../features/Header'));
 const Main = lazy(() => import('../features/Main'));
 const Footer = lazy(() => import('../features/Footer'));
 
 export function AppContent() {
+  responsive();
+
   return (
     <div className="App">
       <Heading pageURL={PATHS.ROOT()} />

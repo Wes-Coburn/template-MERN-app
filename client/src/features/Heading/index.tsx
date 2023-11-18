@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { PATHS } from '../../app/routes';
 import * as appInfo from '../../../manifest.json';
-import links from '../../styles/styleLinks';
+import links from '../../styles/sources';
 
 type Props = {
   pageURL: string;

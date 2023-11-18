@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-export default async function DevTools() {
+export default async function devTools() {
   // Measure accessibility in DevTools
   const axe = await import('@axe-core/react');
   axe.default(React, ReactDOM, 1000);
