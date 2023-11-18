@@ -1,11 +1,12 @@
 /* eslint-disable no-underscore-dangle */
-import { useEffect } from 'react';
+import { useEffect, lazy } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useAppSelector } from '../../app/hooks';
 import { selectNotes, selectNotesStatus } from './notesSlice';
 import Note from './Note';
-import NotFound from '../NotFound';
 import Loading from '../Loading';
+
+const NotFound = lazy(() => import('../NotFound'));
 
 export default function FindNote() {
   const notes = useAppSelector(selectNotes);

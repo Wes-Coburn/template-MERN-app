@@ -6,7 +6,7 @@ const activeLink = ({ isActive }: { isActive: boolean }) =>
   isActive ? styles['Active-link'] : '';
 
 export default function Navbar() {
-  const userId = `TEST_USER`; // REPLACE ME WITH AUTHENTICATION
+  const userId = import.meta.env.VITE_USER_ID; // REPLACE ME WITH AUTHENTICATION
 
   return (
     <nav className={styles.Navbar} role="navigation" aria-label="Primary">

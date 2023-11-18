@@ -14,22 +14,28 @@ export default function Main() {
   return (
     <main role="main" className={styles.Main}>
       <Routes>
-        {/* /login */}
+        {/* /ROOT [redirect -->] /login */}
         <Route
           path={PATHS.ROOT()}
           element={<Navigate to={ROUTES.getLogin()} replace />}
         />
+        {/* /login */}
         <Route path={PATHS.login()} element={<Login />} />
 
-        {/* user/:userId */}
+        {/* /user/:userId */}
         <Route path={PATHS.user()}>
+          {/* /user/:userId [redirect --->] user/:userId/home */}
           <Route
-            path={PATHS.ROOT()} /* Reroute to <Home /> */
+            path={PATHS.ROOT()}
             element={<Navigate to={PATHS.home()} replace />}
           />
+          {/* /user/:userId/home */}
           <Route path={PATHS.home()} element={<Home />} />
+          {/* /user/:userId/notes */}
           <Route path={PATHS.allNotes()} element={<NotesList />} />
+          {/* /user/:userId/find-note?noteId=<noteId> */}
           <Route path={PATHS.findNote()} element={<FindNote />} />
+          {/* /user/:userId/new-note */}
           <Route path={PATHS.newNote()} element={<NewNote />} />
         </Route>
 

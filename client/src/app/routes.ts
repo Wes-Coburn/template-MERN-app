@@ -1,8 +1,10 @@
+const baseCanonUrl = 'www.my-example-website.com';
+
 export const PATHS = {
   ROOT: () => '',
-  CANONICAL: (url: string) => `www.my-example-website.com/${url}`,
+  CANONICAL: (url: string) => encodeURI(`${baseCanonUrl}/${url}`),
   NOT_FOUND: () => '*',
-  user: (userId?: string) => `user/${userId ?? ':userId'}`,
+  user: (userId?: string) => encodeURI(`user/${userId ?? ':userId'}`),
   login: () => 'login',
   home: () => 'home',
   allNotes: () => 'notes',
@@ -12,10 +14,14 @@ export const PATHS = {
 
 const ROUTES = {
   getLogin: () => PATHS.login(),
-  getHome: (userId: string) => `${PATHS.user(userId)}/${PATHS.home()}`,
-  getAllNotes: (userId: string) => `${PATHS.user(userId)}/${PATHS.allNotes()}`,
-  getFindNote: (userId: string) => `${PATHS.user(userId)}/${PATHS.findNote()}`,
-  getNewNote: (userId: string) => `${PATHS.user(userId)}/${PATHS.newNote()}`,
+  getHome: (userId: string) =>
+    encodeURI(`${PATHS.user(userId)}/${PATHS.home()}`),
+  getAllNotes: (userId: string) =>
+    encodeURI(`${PATHS.user(userId)}/${PATHS.allNotes()}`),
+  getFindNote: (userId: string) =>
+    encodeURI(`${PATHS.user(userId)}/${PATHS.findNote()}`),
+  getNewNote: (userId: string) =>
+    encodeURI(`${PATHS.user(userId)}/${PATHS.newNote()}`),
 };
 
 /* James 11/15
