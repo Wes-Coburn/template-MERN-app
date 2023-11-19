@@ -1,8 +1,15 @@
-const baseCanonUrl = 'www.my-example-website.com';
+const publicURL = `${import.meta.env.VITE_PUBLIC_URL}/`;
+const protocol = 'https://';
+const mobileDomain = 'm.';
+
+export const CANONICAL = {
+  desktop: (path: string) => encodeURI(`${protocol}${publicURL}${path}`),
+  mobile: (path: string) =>
+    encodeURI(`${protocol}${mobileDomain}${publicURL}${path}`),
+};
 
 export const PATHS = {
   ROOT: () => '',
-  CANONICAL: (url: string) => encodeURI(`${baseCanonUrl}/${url}`),
   NOT_FOUND: () => '*',
   user: (userId?: string) => encodeURI(`user/${userId ?? ':userId'}`),
   login: () => 'login',

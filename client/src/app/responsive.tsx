@@ -1,4 +1,6 @@
-export const isMobileDevice = () => {
+import QUERIES from '../styles/queries';
+
+export const isMobileDomain = () => {
   const { host } = window.location;
   const parts = host.split('.');
   return parts[0] === 'm';
@@ -6,21 +8,20 @@ export const isMobileDevice = () => {
 
 export default function responsive() {
   const mobileDomain = 'm';
-  const mobileQuery = '(max-width: 500px)';
+  type Device = 'desktop' | 'mobile';
 
   const { host, protocol } = window.location;
   const parts = host.split('.');
-
-  type Device = 'desktop' | 'mobile';
+  const path = isMobileDomain() ? parts[1] : parts[0];
 
   const switchDevice = (device: Device) => {
     let newURI = `${protocol}//`;
     switch (device) {
       case 'desktop':
-        newURI += parts[1];
+        newURI += path;
         break;
       case 'mobile':
-        newURI += `${mobileDomain}.${parts[0]}`;
+        newURI += `${mobileDomain}.${path}`;
         break;
       default:
         break;
@@ -32,5 +33,10 @@ export default function responsive() {
     switchDevice(event.matches ? 'mobile' : 'desktop');
   };
 
-  window.matchMedia(mobileQuery).addEventListener('change', handler);
+  const mobileWatch = window.matchMedia(QUERIES.mobile);
+  mobileWatch.addEventListener('change', handler);
+
+  if (isMobileDomain() !== mobileWatch.matches) {
+    switchDevice(mobileWatch.matches ? 'mobile' : 'desktop');
+  }
 }
