@@ -1,18 +1,22 @@
+import logoMain from './logo.svg';
+import screenshot1 from './screenshot1.png';
+import screenshot2 from './screenshot2.jpg';
+
 const ASSETS = {
   images: {
     logos: {
       main: {
-        src: '/logo.svg',
+        src: logoMain,
         alt: 'app logo',
       },
     },
     screenshots: {
       first: {
-        src: 'src/assets/screenshot1.png',
+        src: screenshot1,
         alt: 'screenshot 1',
       },
       second: {
-        src: 'src/assets/screenshot2.png',
+        src: screenshot2,
         alt: 'screenshot 2',
       },
     },
