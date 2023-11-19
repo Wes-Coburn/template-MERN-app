@@ -8,11 +8,11 @@ const ASSETS = {
     },
     screenshots: {
       first: {
-        src: '/screenshot1.png',
+        src: 'src/assets/screenshot1.png',
         alt: 'screenshot 1',
       },
       second: {
-        src: '/screenshot2.png',
+        src: 'src/assets/screenshot2.png',
         alt: 'screenshot 2',
       },
     },
