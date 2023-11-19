@@ -7,7 +7,7 @@ type Link = {
 };
 
 /** Used in <Heading /> to generate links to critical style resources */
-const Links: Array<Link> = [
+const LINKS: Array<Link> = [
   {
     rel: 'preconnect',
     href: 'https://fonts.googleapis.com',
@@ -23,4 +23,4 @@ const Links: Array<Link> = [
   },
 ];
 
-export default Links;
+export default LINKS;

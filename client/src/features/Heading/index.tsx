@@ -1,8 +1,9 @@
 import { Helmet } from 'react-helmet-async';
 import { CANONICAL } from '../../app/routes';
 import QUERIES from '../../styles/queries';
+import LINKS from '../../styles/sources';
+import ASSETS from '../../assets';
 import * as appInfo from '../../../manifest.json';
-import links from '../../styles/sources';
 
 type Props = {
   pageURL: string;
@@ -55,7 +56,7 @@ export default function Heading({
       <meta name="twitter:image:alt" content={iconAlt} />
 
       {/* Critical Style Resources */}
-      {links.map((link) => {
+      {LINKS.map((link) => {
         const { rel, href, crossOrigin } = link;
 
         return (
@@ -76,6 +77,6 @@ Heading.defaultProps = {
   pageTitle: appInfo.name,
   appDescription: appInfo.description,
   themeColor: appInfo.theme_color,
-  iconUrl: appInfo.icons[0].src,
-  iconAlt: 'app icon alt text',
+  iconUrl: ASSETS.images.logos.main.src,
+  iconAlt: ASSETS.images.logos.main.alt,
 };

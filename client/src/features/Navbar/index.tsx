@@ -2,11 +2,21 @@ import { NavLink } from 'react-router-dom';
 import ROUTES from '../../app/routes';
 import styles from './Navbar.module.css';
 
-const activeLink = ({ isActive }: { isActive: boolean }) =>
-  isActive ? styles['Active-link'] : '';
+const activeLink = ({
+  isActive,
+  isPending,
+}: {
+  isActive: boolean;
+  isPending: boolean;
+}) => {
+  let linkStyle = '';
+  if (isPending) linkStyle = styles['Pending-link'];
+  else if (isActive) linkStyle = styles['Active-link'];
+  return linkStyle;
+};
 
 export default function Navbar() {
-  const userId = import.meta.env.VITE_USER_ID; // REPLACE ME WITH AUTHENTICATION
+  const userId = import.meta.env.VITE_TEST_USER_ID; // REPLACE ME WITH AUTHENTICATION
 
   return (
     <nav className={styles.Navbar} role="navigation" aria-label="Primary">

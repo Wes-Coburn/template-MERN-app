@@ -1,8 +1,8 @@
-const baseUrl = 'http://localhost:5050/';
-const apiUrl = (api: string) => `${baseUrl}${api}`;
+const serverURL = import.meta.env.VITE_SERVER_URL;
+const apiURL = (path: string) => `${serverURL}${path}`;
 
 const API = {
-  getAllNotes: () => apiUrl('note'),
+  getAllNotes: () => apiURL('note'),
 };
 
 export default API;

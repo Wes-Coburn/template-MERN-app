@@ -6,6 +6,10 @@
   color: red;
 }
 
+.Pending-link {
+  color: green;
+}
+
 .ul li {
   display: inline;
   margin: 1rem;
