@@ -4,17 +4,31 @@ import ROUTES, { PATHS } from '../../app/routes';
 import FindNote from '../Notes/FindNote';
 import styles from './Main.module.css';
 import NewNote from '../Notes/NewNote';
-import { isMobileDomain } from '../../app/responsive';
+// import { isMobileDomain } from '../../app/responsive';
 
 const Login = lazy(() => import('../Login'));
 const Home = lazy(() => import('../Home'));
 const NotesList = lazy(() => import('../Notes/NotesList'));
 const NotFound = lazy(() => import('../NotFound'));
 
+/** remove this condition if subdomain is configured in responsive.ts */
+let responsive: typeof import('../../app/responsive');
+if (process.env.NODE_ENV !== 'production') {
+  responsive = await import('../../app/responsive');
+  responsive.default();
+}
+
 export default function Main() {
+  let deviceDomain;
+  if (responsive !== undefined) {
+    if (responsive.isMobileDomain()) {
+      deviceDomain = '[Mobile]';
+    } else deviceDomain = '[Desktop]';
+  }
+
   return (
     <main role="main" className={styles.Main}>
-      {isMobileDomain() ? <p>[Mobile]</p> : <p>[Desktop]</p>}
+      {deviceDomain ?? ''}
       <Routes>
         {/* /ROOT [redirect -->] /login */}
         <Route
