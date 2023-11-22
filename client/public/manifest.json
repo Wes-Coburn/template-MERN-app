@@ -35,7 +35,7 @@
   ],
   "screenshots": [
     {
-      "src": "/assets_public/screenshot1.png",
+      "src": "/assets/screenshot1.png",
       "type": "image/png",
       "sizes": "627x437",
       "form_factor": "narrow"
@@ -53,7 +53,7 @@
       "short_name": "Login",
       "description": "Login to your account",
       "url": "/login?source=pwa",
-      "icons": [{ "src": "/assets_public/logo.svg", "sizes": "150x150" }]
+      "icons": [{ "src": "/assets/logo.svg", "sizes": "150x150" }]
     }
   ]
 }
