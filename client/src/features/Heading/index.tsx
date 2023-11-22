@@ -3,7 +3,7 @@ import { CANONICAL } from '../../app/routes';
 import QUERIES from '../../styles/queries';
 import LINKS from '../../styles/sources';
 import ASSETS from '../../assets';
-import * as appInfo from '../../../manifest.json';
+// import * as appInfo from '../../../manifest.json';
 
 type Props = {
   pageURL: string;
@@ -74,9 +74,9 @@ export default function Heading({
 }
 
 Heading.defaultProps = {
-  pageTitle: appInfo.name,
-  appDescription: appInfo.description,
-  themeColor: appInfo.theme_color,
+  pageTitle: '',
+  appDescription: '',
+  themeColor: '',
   iconUrl: ASSETS.images.logos.favIcon.src,
   iconAlt: ASSETS.images.logos.favIcon.alt,
 };
