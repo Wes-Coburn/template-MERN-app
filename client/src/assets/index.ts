@@ -1,5 +1,6 @@
-import favIcon from './logo.svg';
-import screenshot1 from './screenshot1.png';
+/* eslint-disable import/no-absolute-path */
+import favIcon from '/logo.svg';
+import screenshot1 from '/screenshot1.png';
 
 const ASSETS = {
   images: {

@@ -29,7 +29,9 @@ npx degit Wes-Coburn/template-MERN-app my-app
 ### TODO!
 
 - Create 'server/config.env' with ['config.sample-env'](server/config.sample-env) structure.
+  - Alternatively, configure *secrets* in your deployment.
 - Update [manifest.json](/client/manifest.json)
+- Update [appInfo.json](/client//appInfo.json)
 
 ## Scripts
 
