@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { CANONICAL } from '../../app/routes';
-import QUERIES from '../../styles/queries';
+// import QUERIES from '../../styles/queries';
 import LINKS from '../../styles/sources';
 import ASSETS from '../../assets';
 import * as appInfo from '../../../appInfo.json';
@@ -27,11 +27,13 @@ export default function Heading({
       {/* Basic Meta Info */}
       <title>{pageTitle}</title>
       <link rel="canonical" href={CANONICAL.desktop(pageURL)} />
+      {/* 
       <link
         rel="alternate"
         media={QUERIES.mobile}
         href={`${CANONICAL.mobile(pageURL)}`}
       />
+      */}
       <meta name="description" content={appDescription} />
       <meta name="theme-color" content={themeColor} />
 
