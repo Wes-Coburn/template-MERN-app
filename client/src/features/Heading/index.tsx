@@ -74,8 +74,8 @@ export default function Heading({
 }
 
 Heading.defaultProps = {
-  pageTitle: appInfo.appName,
-  appDescription: appInfo.appDescription,
+  pageTitle: appInfo.titleDefault,
+  appDescription: appInfo.descriptionDefault,
   themeColor: appInfo.themeColor,
   iconUrl: ASSETS.images.logos.favIcon.src,
   iconAlt: ASSETS.images.logos.favIcon.alt,

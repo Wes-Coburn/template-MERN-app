@@ -1,5 +1,5 @@
 {
-  "appName": "MERN",
-  "appDescription": "Template for a MERN app",
+  "titleDefault": "MERN",
+  "descriptionDefault": "Template for a MERN app",
   "themeColor": "#3367D6"
 }
