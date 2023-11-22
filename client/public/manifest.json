@@ -13,35 +13,35 @@
   "background_color": "#3367D6",
   "icons": [
     {
-      "src": "/src/assets/logo.svg",
+      "src": "/logo.svg",
       "type": "image/svg+xml",
       "sizes": "150x150"
     },
     {
-      "src": "/src/assets/icons-vector.svg",
+      "src": "/icons-vector.svg",
       "type": "image/svg+xml",
       "sizes": "512x512"
     },
     {
-      "src": "/src/assets/icons-192.png",
+      "src": "/icons-192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/src/assets/icons-512.png",
+      "src": "/icons-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
   "screenshots": [
     {
-      "src": "/src/assets/screenshot1.png",
+      "src": "/screenshot1.png",
       "type": "image/png",
       "sizes": "627x437",
       "form_factor": "narrow"
     },
     {
-      "src": "/src/assets/screenshot2.jpg",
+      "src": "/screenshot2.jpg",
       "type": "image/jpg",
       "sizes": "720x540",
       "form_factor": "wide"
@@ -53,7 +53,7 @@
       "short_name": "Login",
       "description": "Login to your account",
       "url": "/login?source=pwa",
-      "icons": [{ "src": "/src/assets/logo.svg", "sizes": "150x150" }]
+      "icons": [{ "src": "/logo.svg", "sizes": "150x150" }]
     }
   ]
 }
