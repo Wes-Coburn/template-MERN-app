@@ -77,6 +77,6 @@ Heading.defaultProps = {
   pageTitle: appInfo.name,
   appDescription: appInfo.description,
   themeColor: appInfo.theme_color,
-  iconUrl: ASSETS.images.logos.main.src,
-  iconAlt: ASSETS.images.logos.main.alt,
+  iconUrl: ASSETS.images.logos.favIcon.src,
+  iconAlt: ASSETS.images.logos.favIcon.alt,
 };

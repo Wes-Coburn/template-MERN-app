@@ -11,24 +11,26 @@ const Home = lazy(() => import('../Home'));
 const NotesList = lazy(() => import('../Notes/NotesList'));
 const NotFound = lazy(() => import('../NotFound'));
 
-/** remove this condition if subdomain is configured in responsive.ts */
-let responsive: typeof import('../../app/responsive');
-if (process.env.NODE_ENV !== 'production') {
-  responsive = await import('../../app/responsive');
-  responsive.default();
-}
+/** uncomment if subdomain is configured in responsive.ts */
+const responsive: typeof import('../../app/responsive') = await import(
+  '../../app/responsive'
+);
+responsive.default();
 
-export default function Main() {
-  let deviceDomain;
+const deviceDomain = () => {
   if (responsive !== undefined) {
     if (responsive.isMobileDomain()) {
-      deviceDomain = '[Mobile]';
-    } else deviceDomain = '[Desktop]';
+      return <p>[Mobile]</p>;
+    }
+    return <p>[Desktop]</p>;
   }
+  return null;
+};
 
+export default function Main() {
   return (
     <main role="main" className={styles.Main}>
-      {deviceDomain ?? ''}
+      {deviceDomain()}
       <Routes>
         {/* /ROOT [redirect -->] /login */}
         <Route

@@ -2,6 +2,8 @@
   "short_name": "MERN",
   "name": "MERN App",
   "description": "Template for a MERN app",
+  "manifest_version": "2",
+  "version": "1.0.0",
   "id": "/?source=pwa",
   "start_url": "/?source=pwa",
   "display_override": ["window-controls-overlay"],
@@ -35,7 +37,7 @@
     {
       "src": "/src/assets/screenshot1.png",
       "type": "image/png",
-      "sizes": "540x720",
+      "sizes": "627x437",
       "form_factor": "narrow"
     },
     {

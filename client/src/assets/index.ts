@@ -1,12 +1,11 @@
-import logoMain from './logo.svg';
+import favIcon from './logo.svg';
 import screenshot1 from './screenshot1.png';
-import screenshot2 from './screenshot2.jpg';
 
 const ASSETS = {
   images: {
     logos: {
-      main: {
-        src: logoMain,
+      favIcon: {
+        src: favIcon,
         alt: 'app logo',
       },
     },
@@ -14,10 +13,6 @@ const ASSETS = {
       first: {
         src: screenshot1,
         alt: 'screenshot 1',
-      },
-      second: {
-        src: screenshot2,
-        alt: 'screenshot 2',
       },
     },
   },
