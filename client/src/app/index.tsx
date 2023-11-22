@@ -11,11 +11,9 @@ const Header = lazy(() => import('../features/Header'));
 const Main = lazy(() => import('../features/Main'));
 const Footer = lazy(() => import('../features/Footer'));
 
-/** remove this condition if subdomain is configured in responsive.ts */
-if (process.env.NODE_ENV !== 'production') {
-  const responsive = await import('./responsive');
-  responsive.default();
-}
+/** uncomment if subdomain is configured in responsive.ts */
+const responsive = await import('./responsive');
+responsive.default();
 
 export function AppContent() {
   return (

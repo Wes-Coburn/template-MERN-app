@@ -7,7 +7,7 @@ import App from './app';
 import './styles/index.css';
 
 if (process.env.NODE_ENV !== 'production') {
-  const devTools = await import('./devTools');
+  const devTools = await import('./test/devTools');
   devTools.default();
 }
 
