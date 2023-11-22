@@ -1,3 +1,4 @@
+/*
 import QUERIES from '../styles/queries';
 
 export const isMobileDomain = () => {
@@ -40,3 +41,4 @@ export default function responsive() {
     switchDevice(mobileWatch.matches ? 'mobile' : 'desktop');
   }
 }
+*/

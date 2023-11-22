@@ -12,6 +12,7 @@ const NotesList = lazy(() => import('../Notes/NotesList'));
 const NotFound = lazy(() => import('../NotFound'));
 
 /** uncomment if subdomain is configured in responsive.ts */
+/*
 const responsive: typeof import('../../app/responsive') = await import(
   '../../app/responsive'
 );
@@ -26,11 +27,12 @@ const deviceDomain = () => {
   }
   return null;
 };
+*/
 
 export default function Main() {
   return (
     <main role="main" className={styles.Main}>
-      {deviceDomain()}
+      {/* deviceDomain() */}
       <Routes>
         {/* /ROOT [redirect -->] /login */}
         <Route
