@@ -32,6 +32,7 @@ npx degit Wes-Coburn/template-MERN-app my-app
   - Alternatively, configure *secrets* in your deployment.
 - Update [manifest.json](/client/manifest.json)
 - Update [appInfo.json](/client//appInfo.json)
+- Remove [responsive.ts](/client/src/app/responsive.ts) unless mobile subdomain is configured ('m.')
 
 ## Scripts
 
