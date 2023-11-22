@@ -13,7 +13,7 @@
   "background_color": "#3367D6",
   "icons": [
     {
-      "src": "/assets_public/logo.svg",
+      "src": "/assets/logo.svg",
       "type": "image/svg+xml",
       "sizes": "150x150"
     },
