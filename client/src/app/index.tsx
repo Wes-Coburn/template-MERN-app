@@ -17,7 +17,6 @@ export function AppContent() {
 
   return (
     <div className="App">
-      <Heading pageURL={PATHS.ROOT()} />
       <ErrorBoundary fallback={<Error />}>
         <div className="Grid-top">
           <Suspense fallback={<Loading />}>
@@ -42,6 +41,7 @@ export function AppContent() {
 function App() {
   return (
     <Router>
+      <Heading pageURL={PATHS.ROOT()} />
       <AppContent />
     </Router>
   );

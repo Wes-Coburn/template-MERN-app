@@ -39,7 +39,7 @@ npx degit Wes-Coburn/template-MERN-app my-app
 
 ```shell
 # install and update all packages
-npm run install-update-all
+npm run install-update
 
 #[sequential] run server 'start' THEN run client 'start'
 npm start

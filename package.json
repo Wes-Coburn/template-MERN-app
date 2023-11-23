@@ -11,11 +11,11 @@
     "install-update": "npm run i-ncu && cd server && npm run i-ncu && cd ../client && npm run i-ncu"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.10.0",
-    "@typescript-eslint/parser": "^6.10.0",
-    "eslint": "^8.53.0",
-    "npm-check-updates": "^16.14.6",
-    "typescript": "^5.2.2"
+    "@typescript-eslint/eslint-plugin": "^6.12.0",
+    "@typescript-eslint/parser": "^6.12.0",
+    "eslint": "^8.54.0",
+    "npm-check-updates": "^16.14.11",
+    "typescript": "^5.3.2"
   },
   "engines": {
     "node": ">=18.18.0 <19.0.0"
