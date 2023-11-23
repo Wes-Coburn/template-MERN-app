@@ -18,9 +18,11 @@
     "postformat:fix": "prettier --write \"./src/**/*.{ts,tsx}\""
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
     "@reduxjs/toolkit": "^1.9.7",
     "@vitejs/plugin-react": "^4.2.0",
     "react": "^18.2.0",
+    "react-awesome-reveal": "^4.2.7",
     "react-dom": "^18.2.0",
     "react-error-boundary": "^4.0.11",
     "react-helmet-async": "^1.3.0",

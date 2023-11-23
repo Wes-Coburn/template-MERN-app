@@ -1,12 +1,17 @@
 /* eslint-disable no-underscore-dangle */
 import { useEffect, lazy } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { Fade } from 'react-awesome-reveal';
 import { useAppSelector } from '../../app/hooks';
 import { selectNotes, selectNotesStatus } from './notesSlice';
 import Note from './Note';
 import Loading from '../Loading';
 
 const NotFound = lazy(() => import('../NotFound'));
+
+function FindNoteWrapper(child: JSX.Element) {
+  return <Fade>{child}</Fade>;
+}
 
 export default function FindNote() {
   const notes = useAppSelector(selectNotes);
@@ -24,14 +29,14 @@ export default function FindNote() {
   const noteId = searchParams.get('noteId');
   const foundNote = notes.find((note) => note._id === noteId);
 
-  if (foundNote === undefined) return <NotFound />; // TODO: figure out why, action is dispatched from NotesList
+  if (foundNote === undefined) return FindNoteWrapper(<NotFound />); // TODO: figure out why, action is dispatched from NotesList
 
   switch (notesState) {
     case 'pending':
-      return <Loading />;
+      return FindNoteWrapper(<Loading />);
     case 'failed':
-      return <NotFound />;
+      return FindNoteWrapper(<NotFound />);
     default:
-      return <Note text={foundNote.text} />;
+      return FindNoteWrapper(<Note text={foundNote.text} />);
   }
 }

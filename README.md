@@ -23,6 +23,7 @@ npx degit Wes-Coburn/template-MERN-app my-app
 - Vitest
 - React Testing Library
 - [React-Helmet](https://www.npmjs.com/package/react-helmet)
+- [React-Awesome-Reveal](https://www.npmjs.com/package/react-awesome-reveal)
 
 ## Development
 
