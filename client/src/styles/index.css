@@ -1,11 +1,9 @@
 @import url('fonts.css');
 @import url('structures.css');
 
-/*
 * {
   border: 1px solid red;
 }
-*/
 
 body {
   font-size: var(--font-size-400);
