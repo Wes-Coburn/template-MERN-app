@@ -3,5 +3,5 @@ import Header from '.';
 
 test('renders correctly', () => {
   render(<Header />);
-  expect(screen.getByRole('heading')).toBeInTheDocument();
+  expect(screen.getByRole('banner')).toBeInTheDocument();
 });

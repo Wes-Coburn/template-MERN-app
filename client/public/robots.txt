@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://www.example.com/sitemap.xml
+Sitemap: https://react-static-wo1g.onrender.com/sitemap.xml

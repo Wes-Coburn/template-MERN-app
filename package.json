@@ -8,6 +8,7 @@
     "test": "cd server && npm test & cd ../client && npm test",
     "format": "cd server && npm run format & cd ../client && npm run format",
     "i-ncu": "npm i && ncu && ncu -u && npm i",
+    "install-all": "npm i && cd server && npm i && cd ../client && npm run i",
     "install-update": "npm run i-ncu && cd server && npm run i-ncu && cd ../client && npm run i-ncu"
   },
   "devDependencies": {

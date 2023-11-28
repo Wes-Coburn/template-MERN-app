@@ -33,17 +33,31 @@ npx degit Wes-Coburn/template-MERN-app my-app
   - Alternatively, configure *secrets* in your deployment.
 - Update [manifest.json](/client/manifest.json)
 - Update [appInfo.json](/client//appInfo.json)
+- Update [sitemap.xml](/client/public/sitemap.xml)
+- Update [robots.txt](/client/public/robots.txt)
 - Remove [responsive.ts](/client/src/app/responsive.ts) unless mobile subdomain is configured ('m.')
 
 ## Scripts
 
 ```shell
-# install and update all packages
+## INSTALL
+# install all packages
+npm run install-all
+# [NOT RECOMMENDED] install and update all packages (uses npm-check-updates)
 npm run install-update
 
-#[sequential] run server 'start' THEN run client 'start'
-npm start
+## START
+# spin up a local server on port 5050
+npm run start:server
+# start the client
+npm run start:client
 
-#[parallel] run server 'test' AND run client 'test'
+## TEST
+# run all tests (uses Vitest and React Testing Library)
 npm test
+
+## FORMAT
+# format all directories (uses ESLint, Prettier, and eslint-plugin-prettier)
+npm run format
+npm run format:fix # apply changes (uses 'eslint --fix' and 'prettier --write')
 ```

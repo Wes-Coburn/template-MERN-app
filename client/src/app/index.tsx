@@ -1,6 +1,7 @@
 import { BrowserRouter as Router } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
 import { lazy, Suspense } from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 import { PATHS } from './routes';
 import Heading from '../features/Heading';
 import Loading from '../features/Loading';
@@ -38,12 +39,15 @@ export function AppContent() {
   );
 }
 
+/** HelmetProvider is here instead of main.tsx to avoid testing errors */
 function App() {
   return (
-    <Router>
-      <Heading pageURL={PATHS.ROOT()} />
-      <AppContent />
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <Heading pageURL={PATHS.ROOT()} />
+        <AppContent />
+      </Router>
+    </HelmetProvider>
   );
 }
 
