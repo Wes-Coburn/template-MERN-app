@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <header role="banner">
       <img src={favIcon.src} alt={favIcon.alt} className={styles['App-logo']} />
-      <h1>Note-Taker App</h1>
+      <h1>MERN App Template</h1>
       <Navbar />
     </header>
   );
