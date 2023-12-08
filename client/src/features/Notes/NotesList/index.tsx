@@ -1,9 +1,9 @@
 /* eslint-disable no-underscore-dangle */
 import { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '../../app/hooks';
-import { selectNotes, getAllNotes } from './notesSlice';
-import Note from './Note';
-import NotFound from '../NotFound';
+import { useAppDispatch, useAppSelector } from '../../../app/hooks';
+import { selectNotes, getAllNotes } from '../notesSlice';
+import Note from '../Note';
+import NotFound from '../../NotFound';
 
 export default function NotesList() {
   const notes = useAppSelector(selectNotes);
