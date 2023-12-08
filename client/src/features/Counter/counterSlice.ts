@@ -1,12 +1,16 @@
 /* eslint-disable no-param-reassign */
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 // eslint-disable-next-line import/no-cycle
-import { RootState, AppThunk } from '../../app/store';
+import {
+  RootState,
+  AppThunk,
+  ThunkStatus,
+  ThunkStatusOptions,
+} from '../../app/store';
 import fetchCount from './counterAPI';
 
-export interface CounterState {
+export interface CounterState extends ThunkStatus {
   value: number;
-  status: 'idle' | 'loading' | 'failed';
 }
 
 const initialState: CounterState = {
@@ -53,14 +57,14 @@ export const counterSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(incrementAsync.pending, (state) => {
-        state.status = 'loading';
+        state.status = ThunkStatusOptions.loading;
       })
       .addCase(incrementAsync.fulfilled, (state, action) => {
-        state.status = 'idle';
+        state.status = ThunkStatusOptions.idle;
         state.value += action.payload;
       })
       .addCase(incrementAsync.rejected, (state) => {
-        state.status = 'failed';
+        state.status = ThunkStatusOptions.failed;
       });
   },
 });

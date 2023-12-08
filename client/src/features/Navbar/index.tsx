@@ -27,18 +27,8 @@ export default function Navbar() {
           </NavLink>
         </li>
         <li>
-          <NavLink className={activeLink} to={ROUTES.getAllNotes(userId)}>
-            All Notes
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className={activeLink} to={ROUTES.getFindNote(userId)}>
-            Find Note
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className={activeLink} to={ROUTES.getNewNote(userId)}>
-            New Note
+          <NavLink className={activeLink} to={ROUTES.getCounter()}>
+            Counter
           </NavLink>
         </li>
       </ul>

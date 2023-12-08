@@ -1,14 +1,12 @@
 import { lazy } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import ROUTES, { PATHS } from '../../app/routes';
-import FindNote from '../Notes/FindNote';
 import styles from './Main.module.css';
-import NewNote from '../Notes/NewNote';
 // import { isMobileDomain } from '../../app/responsive';
 
 const Login = lazy(() => import('../Login'));
 const Home = lazy(() => import('../Home'));
-const NotesList = lazy(() => import('../Notes/NotesList'));
+const Counter = lazy(() => import('../Counter'));
 const NotFound = lazy(() => import('../NotFound'));
 
 /** uncomment if subdomain is configured in responsive.ts */
@@ -46,10 +44,9 @@ export default function Main() {
             element={<Navigate to={PATHS.home()} replace />}
           />
           <Route path={PATHS.home()} element={<Home />} />
-          <Route path={PATHS.allNotes()} element={<NotesList />} />
-          <Route path={PATHS.findNote()} element={<FindNote />} />
-          <Route path={PATHS.newNote()} element={<NewNote />} />
         </Route>
+
+        <Route path={PATHS.counter()} element={<Counter />} />
 
         <Route path={PATHS.NOT_FOUND()} element={<NotFound />} />
       </Routes>
