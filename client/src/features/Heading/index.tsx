@@ -1,7 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { CANONICAL } from '../../app/routes';
 // import QUERIES from '../../styles/queries';
-import LINKS from '../../styles/sources';
 import ASSETS from '../../assets';
 import * as appInfo from '../../../appInfo.json';
 
@@ -56,21 +55,6 @@ export default function Heading({
       <meta name="twitter:description" content={appDescription} />
       <meta name="twitter:image" content={iconUrl} />
       <meta name="twitter:image:alt" content={iconAlt} />
-
-      {/* Critical Style Resources */}
-      {LINKS.map((link) => {
-        const { rel, href, crossOrigin } = link;
-
-        return (
-          <link
-            key={rel + link.href}
-            rel={rel}
-            href={href}
-            // eslint-disable-next-line react/jsx-props-no-spreading
-            {...(crossOrigin ? { crossOrigin } : {})}
-          />
-        );
-      })}
     </Helmet>
   );
 }
