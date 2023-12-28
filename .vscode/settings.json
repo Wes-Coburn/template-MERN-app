@@ -5,7 +5,8 @@
   "editor.formatOnSave": true, // optional
   "editor.formatOnSaveMode": "file", // required to format on save
   "files.autoSave": "onFocusChange", // optional but recommended
-  "vs-code-prettier-eslint.prettierLast": false,
+  "vs-code-prettier-eslint.prettierLast": false, // set as "true" to run 'prettier' last not first,
+  "css.customData": ["./css_custom_data.json"],
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -14,5 +15,5 @@
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  } // set as "true" to run 'prettier' last not first
+  }
 }

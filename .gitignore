@@ -4,6 +4,7 @@
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+!.vscode/css_custom_data.json
 !.vscode/*.code-snippets
 !.vscode/*.editorconfig
 

@@ -60,4 +60,8 @@ npm test
 # format all directories (uses ESLint, Prettier, and eslint-plugin-prettier)
 npm run format
 npm run format:fix # apply changes (uses 'eslint --fix' and 'prettier --write')
+
+## TAILWIND
+# start the Tailwind CLI build process
+npx tailwindcss -i ./src/main.css -o ./dist/output.css --watch
 ```

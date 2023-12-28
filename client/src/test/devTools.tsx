@@ -18,7 +18,6 @@ export default async function devTools() {
 
   // Observe when a page is entering bfcache
   window.addEventListener('pagehide', (event) => {
-    console.log('!!! PAGE HIDE !!!');
     anyWindow.sockets.forEach((socket: WebSocket) => socket.close());
 
     if (event.persisted) {
@@ -30,7 +29,6 @@ export default async function devTools() {
 
   // Observe when a page is restored from bfcache
   window.addEventListener('pageshow', (event) => {
-    console.log('!!! PAGE SHOW !!!');
     if (event.persisted) {
       console.log('This page was restored from the bfcache.');
     } else {

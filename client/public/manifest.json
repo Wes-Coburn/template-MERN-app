@@ -16,21 +16,6 @@
       "src": "/logo.svg",
       "type": "image/svg+xml",
       "sizes": "150x150"
-    },
-    {
-      "src": "/icons-vector.svg",
-      "type": "image/svg+xml",
-      "sizes": "512x512"
-    },
-    {
-      "src": "/icons-192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "/icons-512.png",
-      "type": "image/png",
-      "sizes": "512x512"
     }
   ],
   "screenshots": [
@@ -39,12 +24,6 @@
       "type": "image/png",
       "sizes": "627x437",
       "form_factor": "narrow"
-    },
-    {
-      "src": "/screenshot2.jpg",
-      "type": "image/jpg",
-      "sizes": "720x540",
-      "form_factor": "wide"
     }
   ],
   "shortcuts": [

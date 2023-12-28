@@ -1,13 +1,18 @@
-import { lazy } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import ROUTES, { PATHS } from '../../app/routes';
-import styles from './Main.module.css';
+import NotFound from '../NotFound';
+import Login from '../Components/Login';
+import LoginAlt1 from '../Components/Login/LoginAlt1';
+import Signup from '../Components/Signup';
+import SignupAlt1 from '../Components/Signup/SignupAlt1';
+import CallToAction from '../Components/CallToAction';
+import CallToActionAlt1 from '../Components/CallToAction/alt1';
+import LinkGrid from '../Components/LinkGrid';
+import ProductGallery from '../Components/ProductGallery';
+import FeaturedSection from '../Components/FeaturedSection';
+import Testimonial from '../Components/Testimonial';
+import FAQ from '../Components/FAQ';
 // import { isMobileDomain } from '../../app/responsive';
-
-const Login = lazy(() => import('../Login'));
-const Home = lazy(() => import('../Home'));
-const Counter = lazy(() => import('../Counter'));
-const NotFound = lazy(() => import('../NotFound'));
 
 /** uncomment if subdomain is configured in responsive.ts */
 /*
@@ -27,29 +32,85 @@ const deviceDomain = () => {
 };
 */
 
+const pageWrapper = (content: JSX.Element, topPadding: boolean = true) => {
+  return (
+    <main
+      role="main"
+      className={`min-h-screen ${topPadding ? 'pt-8 sm:pt-12 lg:pt-16' : ''}`}
+    >
+      {content}
+    </main>
+  );
+};
+
+interface Page {
+  path: string;
+  element: JSX.Element;
+}
+
+const pages: Page[] = [
+  {
+    path: PATHS.home(),
+    element: pageWrapper(<CallToAction />),
+  },
+  {
+    path: PATHS.login(),
+    element: pageWrapper(<Login />, false),
+  },
+  {
+    path: PATHS.loginAlt1(),
+    element: pageWrapper(<LoginAlt1 />),
+  },
+  {
+    path: PATHS.signup(),
+    element: pageWrapper(<Signup />, false),
+  },
+  {
+    path: PATHS.signupAlt1(),
+    element: pageWrapper(<SignupAlt1 />, false),
+  },
+  {
+    path: PATHS.linkGrid(),
+    element: pageWrapper(<LinkGrid />),
+  },
+  {
+    path: PATHS.productGallery(),
+    element: pageWrapper(<ProductGallery />),
+  },
+  {
+    path: PATHS.featuredSection(),
+    element: pageWrapper(<FeaturedSection />),
+  },
+  {
+    path: PATHS.callToAction(),
+    element: pageWrapper(<CallToActionAlt1 />),
+  },
+  {
+    path: PATHS.testimonial(),
+    element: pageWrapper(<Testimonial />),
+  },
+  {
+    path: PATHS.FAQ(),
+    element: pageWrapper(<FAQ />),
+  },
+];
+
 export default function Main() {
   return (
-    <main role="main" className={styles.Main}>
+    <>
       {/* deviceDomain() */}
       <Routes>
         <Route
           path={PATHS.ROOT()}
-          element={<Navigate to={ROUTES.getLogin()} replace />}
+          element={<Navigate to={ROUTES.getHome()} replace />}
         />
-        <Route path={PATHS.login()} element={<Login />} />
-
-        <Route path={PATHS.user()}>
-          <Route
-            path={PATHS.ROOT()}
-            element={<Navigate to={PATHS.home()} replace />}
-          />
-          <Route path={PATHS.home()} element={<Home />} />
-        </Route>
-
-        <Route path={PATHS.counter()} element={<Counter />} />
-
+        {pages.map((page) => {
+          return (
+            <Route key={page.path} path={page.path} element={page.element} />
+          );
+        })}
         <Route path={PATHS.NOT_FOUND()} element={<NotFound />} />
       </Routes>
-    </main>
+    </>
   );
 }

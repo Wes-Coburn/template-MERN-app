@@ -1,40 +1,46 @@
 import { BrowserRouter as Router } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
-import { lazy, Suspense } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { PATHS } from './routes';
+import { useAppSelector } from './hooks';
+import { selectColorThemeMode } from './userSlice';
 import Heading from '../features/Heading';
-import Loading from '../features/Loading';
+import Header from '../features/Header';
+import Footer from '../features/Footer';
+import Main from '../features/Main';
 import Error from '../features/Error';
+import Background from '../features/Background';
+import Popup from '../features/Components/Popups';
+// import PopupAlt1 from '../features/Components/Popups/PopupAlt1';
 // import responsive from './responsive';
-import './App.css';
 
-const Header = lazy(() => import('../features/Header'));
-const Main = lazy(() => import('../features/Main'));
-const Footer = lazy(() => import('../features/Footer'));
+const tailwindDefaults = 'dark:text-white';
 
 export function AppContent() {
   // responsive();
+  const themeColorMode = useAppSelector(selectColorThemeMode);
+  let themeColorClass = '';
+  if (
+    themeColorMode === 'dark' ||
+    (themeColorMode === 'system' &&
+      window.matchMedia('(prefers-color-scheme: dark)')?.matches)
+    /* null conditional '?' operator is there to pass tests */
+  ) {
+    themeColorClass = 'dark';
+  }
 
   return (
-    <div className="App">
-      <ErrorBoundary fallback={<Error />}>
-        <div className="Grid-top">
-          <Suspense fallback={<Loading />}>
-            <Header />
-          </Suspense>
-        </div>
-        <div className="Grid-mid">
-          <Suspense fallback={<Loading />}>
-            <Main />
-          </Suspense>
-        </div>
-        <div className="Grid-btm">
-          <Suspense fallback={<Loading />}>
-            <Footer />
-          </Suspense>
-        </div>
-      </ErrorBoundary>
+    <div className={themeColorClass}>
+      <div className={tailwindDefaults}>
+        <Background />
+        <ErrorBoundary fallback={<Error />}>
+          <Popup />
+          {/* <PopupAlt1 /> */}
+          <Header />
+          <Main />
+          <Footer />
+        </ErrorBoundary>
+      </div>
     </div>
   );
 }

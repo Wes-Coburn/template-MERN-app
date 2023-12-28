@@ -14,7 +14,7 @@ module.exports = {
     project: true,
     tsconfigRootDir: __dirname,
   },
-  ignorePatterns: ["dist", "build", ".eslintrc.cjs", "vite.config.ts"], // "out" for jsdoc
+  ignorePatterns: ["dist", "build", ".eslintrc.cjs", "vite.config.ts", "tailwind.config.js"], // "out" for jsdoc
   rules: {
     "no-constant-binary-expression": "error",
     "react/react-in-jsx-scope": "off",

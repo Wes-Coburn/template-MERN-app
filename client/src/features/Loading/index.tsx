@@ -1,13 +1,8 @@
-import styles from './Loading.module.css';
-
+/**
+ * @link https://mambaui.com/components/loading
+ */
 export default function Loading() {
   return (
-    <p>
-      <span className={styles.Loading}> Loading </span>
-    </p>
+    <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-400" />
   );
 }
-
-Loading.defaultProps = {
-  classNames: '',
-};

@@ -1,8 +1,8 @@
 import { Helmet } from 'react-helmet-async';
 import { CANONICAL } from '../../app/routes';
-// import QUERIES from '../../styles/queries';
-import ASSETS from '../../assets';
 import * as appInfo from '../../../appInfo.json';
+// eslint-disable-next-line import/no-absolute-path
+import logo from '/logo.svg';
 
 type Props = {
   pageURL: string;
@@ -63,6 +63,6 @@ Heading.defaultProps = {
   pageTitle: appInfo.titleDefault,
   appDescription: appInfo.descriptionDefault,
   themeColor: appInfo.themeColor,
-  iconUrl: ASSETS.images.logos.favIcon.src,
-  iconAlt: ASSETS.images.logos.favIcon.alt,
+  iconUrl: logo,
+  iconAlt: 'app logo',
 };
