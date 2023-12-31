@@ -12,6 +12,8 @@ import ProductGallery from '../Components/ProductGallery';
 import FeaturedSection from '../Components/FeaturedSection';
 import Testimonial from '../Components/Testimonial';
 import FAQ from '../Components/FAQ';
+import Article from '../Components/Article';
+import Pricing from '../Components/Pricing';
 // import { isMobileDomain } from '../../app/responsive';
 
 /** uncomment if subdomain is configured in responsive.ts */
@@ -90,8 +92,16 @@ const pages: Page[] = [
     element: pageWrapper(<Testimonial />),
   },
   {
+    path: PATHS.article(),
+    element: pageWrapper(<Article />),
+  },
+  {
     path: PATHS.FAQ(),
     element: pageWrapper(<FAQ />),
+  },
+  {
+    path: PATHS.pricing(),
+    element: pageWrapper(<Pricing />),
   },
 ];
 

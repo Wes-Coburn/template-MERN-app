@@ -25,6 +25,8 @@ export const PATHS = {
   callToAction: () => 'callToAction',
   testimonial: () => 'testimonial',
   FAQ: () => 'FAQ',
+  article: () => 'article',
+  pricing: () => 'pricing',
   user: (userId?: string) => encodeURI(`user/${userId ?? ':userId'}`),
 };
 
@@ -42,6 +44,8 @@ const ROUTES = {
   getCallToAction: () => PATHS.callToAction(),
   getTestimonial: () => PATHS.testimonial(),
   getFAQ: () => PATHS.FAQ(),
+  getArticle: () => PATHS.article(),
+  getPricing: () => PATHS.pricing(),
 };
 
 export default ROUTES;

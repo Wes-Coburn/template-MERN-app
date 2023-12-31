@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { store } from './app/store';
 import App from './app';
-import './main.css';
 
 if (process.env.NODE_ENV !== 'production') {
   const devTools = await import('./test/devTools');

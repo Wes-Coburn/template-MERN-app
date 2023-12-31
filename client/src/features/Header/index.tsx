@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import DarkModeToggle from '../Components/Buttons/DarkModeToggle';
 import ROUTES from '../../app/routes';
+import Menu from '../Components/Menu';
 
 const activeLink = ({
   isActive,
@@ -19,17 +20,25 @@ const activeLink = ({
   return linkStyle;
 };
 
-const navigation = [
-  { name: 'Home', href: ROUTES.getHome() },
+interface Link {
+  name: string;
+  href: string;
+}
+
+const navigationPrimary: Link[] = [{ name: 'Home', href: ROUTES.getHome() }];
+
+const navigationSecondary: Link[] = [
   { name: 'Login-Alt1', href: ROUTES.getLoginAlt1() },
   { name: 'Signup', href: ROUTES.getSignup() },
   { name: 'Signup-Alt1', href: ROUTES.getSignupAlt1() },
   { name: 'Link Grid', href: ROUTES.getLinkGrid() },
-  { name: 'Products Gallery', href: ROUTES.getProductGallery() },
+  { name: 'Product Gallery', href: ROUTES.getProductGallery() },
   { name: 'Featured Section', href: ROUTES.getFeaturedSection() },
   { name: 'Call to Action', href: ROUTES.getCallToAction() },
   { name: 'Testimonial', href: ROUTES.getTestimonial() },
   { name: 'FAQ', href: ROUTES.getFAQ() },
+  { name: 'Article', href: ROUTES.getArticle() },
+  { name: 'Pricing', href: ROUTES.getPricing() },
 ];
 
 export default function Header() {
@@ -62,11 +71,12 @@ export default function Header() {
           </button>
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
-          {navigation.map((item) => (
+          {navigationPrimary.map((item) => (
             <NavLink key={item.name} to={item.href} className={activeLink}>
               {item.name}
             </NavLink>
           ))}
+          <Menu name="Components" links={navigationSecondary} />
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-12">
           <DarkModeToggle />
@@ -107,7 +117,7 @@ export default function Header() {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
-                {navigation.map((item) => (
+                {navigationPrimary.concat(navigationSecondary).map((item) => (
                   <a
                     key={item.name}
                     href={item.href}
