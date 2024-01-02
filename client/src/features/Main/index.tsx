@@ -38,7 +38,7 @@ const pageWrapper = (content: JSX.Element, topPadding: boolean = true) => {
   return (
     <main
       role="main"
-      className={`min-h-screen ${topPadding ? 'pt-8 sm:pt-12 lg:pt-16' : ''}`}
+      className={topPadding ? 'min-h-dvh pt-8 sm:pt-12 lg:pt-16' : ''}
     >
       {content}
     </main>

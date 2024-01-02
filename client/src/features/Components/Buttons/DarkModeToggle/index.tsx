@@ -1,6 +1,6 @@
 import { useAppSelector, useAppDispatch } from '../../../../app/hooks';
 import {
-  selectColorThemeMode,
+  selectColorScheme,
   toggleColorThemeMode,
 } from '../../../../app/userSlice';
 
@@ -55,7 +55,7 @@ const darkThemeIcon = toggleIcon('bg-gray-700 translate-x-12', darkIcon);
  */
 export default function DarkModeToggle() {
   const dispatch = useAppDispatch();
-  const themeColorMode = useAppSelector(selectColorThemeMode);
+  const themeColorMode = useAppSelector(selectColorScheme);
 
   return (
     <button

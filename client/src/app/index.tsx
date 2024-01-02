@@ -1,9 +1,10 @@
 import { BrowserRouter as Router } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
 import { HelmetProvider } from 'react-helmet-async';
+import { useEffect, useState } from 'react';
 import { PATHS } from './routes';
 import { useAppSelector } from './hooks';
-import { selectColorThemeMode } from './userSlice';
+import { selectColorScheme } from './userSlice';
 import Heading from '../features/Heading';
 import Header from '../features/Header';
 import Footer from '../features/Footer';
@@ -14,20 +15,37 @@ import Popup from '../features/Components/Popups';
 // import PopupAlt1 from '../features/Components/Popups/PopupAlt1';
 // import responsive from './responsive';
 
+const darkModeQuery = '(prefers-color-scheme: dark)';
+const darkModeMatch = () => window.matchMedia(darkModeQuery);
 const tailwindDefaults = 'dark:text-white';
 
 export function AppContent() {
   // responsive();
-  const themeColorMode = useAppSelector(selectColorThemeMode);
-  let themeColorClass = '';
-  if (
-    themeColorMode === 'dark' ||
-    (themeColorMode === 'system' &&
-      window.matchMedia('(prefers-color-scheme: dark)')?.matches)
-    /* null conditional '?' operator is there to pass tests */
-  ) {
-    themeColorClass = 'dark';
-  }
+  const themeColorMode = useAppSelector(selectColorScheme);
+  const [themeColorClass, setThemeColorClass] = useState<string>('');
+
+  const applyThemeColorMode = (forceDarkMode?: boolean) => {
+    if (
+      themeColorMode === 'dark' ||
+      (themeColorMode === 'system' &&
+        (forceDarkMode || window.matchMedia(darkModeQuery)?.matches))
+      /* null conditional '?' operator is there to pass tests */
+    ) {
+      setThemeColorClass('dark');
+    } else {
+      setThemeColorClass('');
+    }
+  };
+
+  const darkModeListener = (event: MediaQueryListEvent) => {
+    applyThemeColorMode(event.matches);
+  };
+
+  useEffect(() => {
+    darkModeMatch()?.addEventListener('change', darkModeListener);
+    applyThemeColorMode();
+    return darkModeMatch()?.removeEventListener('change', darkModeListener);
+  });
 
   return (
     <div className={themeColorClass}>

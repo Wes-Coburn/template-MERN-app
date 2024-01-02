@@ -3,13 +3,13 @@ import { createSlice } from '@reduxjs/toolkit';
 // eslint-disable-next-line import/no-cycle
 import { RootState } from './store';
 
-export type ThemeColorMode = 'system' | 'light' | 'dark';
+export type ColorScheme = 'system' | 'light' | 'dark';
 export interface UserState {
-  themeColorMode: ThemeColorMode;
+  colorScheme: ColorScheme;
 }
 
 const initialState: UserState = {
-  themeColorMode: 'system',
+  colorScheme: 'system',
 };
 
 export const userSlice = createSlice({
@@ -18,15 +18,15 @@ export const userSlice = createSlice({
   // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
     toggleColorThemeMode: (state) => {
-      switch (state.themeColorMode) {
+      switch (state.colorScheme) {
         case 'system':
-          state.themeColorMode = 'dark';
+          state.colorScheme = 'dark';
           break;
         case 'light':
-          state.themeColorMode = 'system';
+          state.colorScheme = 'system';
           break;
         case 'dark':
-          state.themeColorMode = 'light';
+          state.colorScheme = 'light';
           break;
         default:
           break;
@@ -36,6 +36,5 @@ export const userSlice = createSlice({
 });
 
 export const { toggleColorThemeMode } = userSlice.actions;
-export const selectColorThemeMode = (state: RootState) =>
-  state.user.themeColorMode;
+export const selectColorScheme = (state: RootState) => state.user.colorScheme;
 export default userSlice.reducer;
