@@ -10,7 +10,7 @@ npx degit Wes-Coburn/template-MERN-app my-app
 
 ## Description
 
--> Template for a full-stack [MERN](https://www.mongodb.com/mern-stack#:~:text=MERN%20stands%20for%20MongoDB%2C%20Express,a%20client%2Dside%20JavaScript%20framework) app with TailwindCSS.
+-> Template for a full-stack [MERN](https://www.mongodb.com/mern-stack#:~:text=MERN%20stands%20for%20MongoDB%2C%20Express,a%20client%2Dside%20JavaScript%20framework) app with TypeScript and TailwindCSS.
 
 ## Technologies
 
