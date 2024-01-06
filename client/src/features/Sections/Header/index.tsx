@@ -3,9 +3,9 @@ import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/16/solid';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import DarkModeToggle from '../Components/Buttons/DarkModeToggle';
-import ROUTES from '../../app/routes';
-import Menu from '../Components/Menu';
+import DarkModeToggle from '../../Components/Buttons/DarkModeToggle';
+import ROUTES from '../../../app/routes';
+import Menu from '../../Components/Menu';
 
 const activeLink = ({
   isActive,
@@ -78,7 +78,7 @@ export default function Header() {
           ))}
           <Menu name="Components" links={navigationSecondary} />
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-12">
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-16">
           <DarkModeToggle />
           <NavLink
             to={ROUTES.getLogin()}

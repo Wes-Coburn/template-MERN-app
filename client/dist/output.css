@@ -1110,6 +1110,10 @@ select {
   height: 100vh;
 }
 
+.h-12 {
+  height: 3rem;
+}
+
 .min-h-dvh {
   min-height: 100dvh;
 }
@@ -1164,6 +1168,10 @@ select {
 
 .w-full {
   width: 100%;
+}
+
+.w-12 {
+  width: 3rem;
 }
 
 .max-w-2xl {
@@ -2490,6 +2498,21 @@ select {
   .lg\:gap-x-12 {
     -moz-column-gap: 3rem;
          column-gap: 3rem;
+  }
+
+  .lg\:gap-x-16 {
+    -moz-column-gap: 4rem;
+         column-gap: 4rem;
+  }
+
+  .lg\:gap-x-24 {
+    -moz-column-gap: 6rem;
+         column-gap: 6rem;
+  }
+
+  .lg\:gap-x-28 {
+    -moz-column-gap: 7rem;
+         column-gap: 7rem;
   }
 
   .lg\:space-y-16 > :not([hidden]) ~ :not([hidden]) {

@@ -1,7 +1,7 @@
 import { useAppSelector, useAppDispatch } from '../../../../app/hooks';
 import {
   selectColorScheme,
-  toggleColorThemeMode,
+  toggleColorScheme,
 } from '../../../../app/userSlice';
 
 const darkIcon = (
@@ -37,7 +37,7 @@ const lightIcon = (
 );
 
 const toggleClasses =
-  'w-9 h-9 relative rounded-full transition duration-500 transform p-1 text-white';
+  'w-10 h-10 relative rounded-full transition duration-500 transform -translate-x-2 p-1 text-white';
 
 const toggleIcon = (newClasses: string, iconImage: JSX.Element) => (
   <div id="switch-toggle" className={`${toggleClasses} ${newClasses}`}>
@@ -45,7 +45,6 @@ const toggleIcon = (newClasses: string, iconImage: JSX.Element) => (
   </div>
 );
 
-const systemThemeIcon = toggleIcon('bg-gray-500 translate-x-6', <div />);
 const lightThemeIcon = toggleIcon('bg-yellow-500 -translate-x-2', lightIcon);
 const darkThemeIcon = toggleIcon('bg-gray-700 translate-x-12', darkIcon);
 
@@ -55,20 +54,15 @@ const darkThemeIcon = toggleIcon('bg-gray-700 translate-x-12', darkIcon);
  */
 export default function DarkModeToggle() {
   const dispatch = useAppDispatch();
-  const themeColorMode = useAppSelector(selectColorScheme);
+  const colorScheme = useAppSelector(selectColorScheme);
 
   return (
     <button
       type="button"
       className="w-20 h-8 rounded-full bg-white flex items-center transition duration-300 focus:outline-none shadow"
-      onClick={() => dispatch(toggleColorThemeMode())}
+      onClick={() => dispatch(toggleColorScheme())}
     >
-      {/* eslint-disable-next-line no-nested-ternary */}
-      {themeColorMode === 'system'
-        ? systemThemeIcon
-        : themeColorMode === 'light'
-          ? lightThemeIcon
-          : darkThemeIcon}
+      {colorScheme === 'light' ? lightThemeIcon : darkThemeIcon}
     </button>
   );
 }

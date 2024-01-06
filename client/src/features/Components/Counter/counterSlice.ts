@@ -6,7 +6,7 @@ import {
   AppThunk,
   ThunkStatus,
   ThunkStatusOptions,
-} from '../../app/store';
+} from '../../../app/store';
 import fetchCount from './counterAPI';
 
 export interface CounterState extends ThunkStatus {

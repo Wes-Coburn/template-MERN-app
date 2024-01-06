@@ -15,7 +15,6 @@
     "format:fix": "npm run format -- --fix",
     "i-ncu": "npm i && ncu && ncu -u && npm i",
     "preformat": "npm run type-check",
-    "postformat:fix": "prettier --write \"./src/**/*.{ts,tsx}\"",
     "prebuild": "npm run format && npm test"
   },
   "dependencies": {

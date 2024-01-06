@@ -1,19 +1,19 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
-import ROUTES, { PATHS } from '../../app/routes';
-import NotFound from '../NotFound';
-import Login from '../Components/Login';
-import LoginAlt1 from '../Components/Login/LoginAlt1';
-import Signup from '../Components/Signup';
-import SignupAlt1 from '../Components/Signup/SignupAlt1';
-import CallToAction from '../Components/CallToAction';
-import CallToActionAlt1 from '../Components/CallToAction/alt1';
-import LinkGrid from '../Components/LinkGrid';
-import ProductGallery from '../Components/ProductGallery';
-import FeaturedSection from '../Components/FeaturedSection';
-import Testimonial from '../Components/Testimonial';
-import FAQ from '../Components/FAQ';
-import Article from '../Components/Article';
-import Pricing from '../Components/Pricing';
+import ROUTES, { PATHS } from '../../../app/routes';
+import NotFound from '../../Utilities/NotFound';
+import Login from '../../Components/Login';
+import LoginAlt1 from '../../Components/Login/LoginAlt1';
+import Signup from '../../Components/Signup';
+import SignupAlt1 from '../../Components/Signup/SignupAlt1';
+import CallToAction from '../../Components/CallToAction';
+import CallToActionAlt1 from '../../Components/CallToAction/alt1';
+import LinkGrid from '../../Components/LinkGrid';
+import ProductGallery from '../../Components/ProductGallery';
+import FeaturedSection from '../../Components/FeaturedSection';
+import Testimonial from '../../Components/Testimonial';
+import FAQ from '../../Components/FAQ';
+import Article from '../../Components/Article';
+import Pricing from '../../Components/Pricing';
 // import { isMobileDomain } from '../../app/responsive';
 
 /** uncomment if subdomain is configured in responsive.ts */

@@ -1,54 +1,48 @@
 import { BrowserRouter as Router } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
 import { HelmetProvider } from 'react-helmet-async';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { PATHS } from './routes';
-import { useAppSelector } from './hooks';
-import { selectColorScheme } from './userSlice';
-import Heading from '../features/Heading';
-import Header from '../features/Header';
-import Footer from '../features/Footer';
-import Main from '../features/Main';
-import Error from '../features/Error';
-import Background from '../features/Background';
+import Heading from '../features/Sections/Heading';
+import Header from '../features/Sections/Header';
+import Footer from '../features/Sections/Footer';
+import Main from '../features/Sections/Main';
+import Error from '../features/Utilities/Error';
+import Background from '../features/Sections/Background';
 import Popup from '../features/Components/Popups';
+import { useAppDispatch, useAppSelector } from './hooks';
+import { selectColorScheme, setColorScheme } from './userSlice';
 // import PopupAlt1 from '../features/Components/Popups/PopupAlt1';
 // import responsive from './responsive';
 
-const darkModeQuery = '(prefers-color-scheme: dark)';
-const darkModeMatch = () => window.matchMedia(darkModeQuery);
 const tailwindDefaults = 'dark:text-white';
+const darkModeMatch = () => window.matchMedia('(prefers-color-scheme: dark)');
 
 export function AppContent() {
-  // responsive();
-  const themeColorMode = useAppSelector(selectColorScheme);
-  const [themeColorClass, setThemeColorClass] = useState<string>('');
+  const dispatch = useAppDispatch();
+  const colorScheme = useAppSelector(selectColorScheme);
+  const [colorSchemeClass, setColorSchemeClass] = useState<string>('');
 
-  const applyThemeColorMode = (forceDarkMode?: boolean) => {
-    if (
-      themeColorMode === 'dark' ||
-      (themeColorMode === 'system' &&
-        (forceDarkMode || window.matchMedia(darkModeQuery)?.matches))
-      /* null conditional '?' operator is there to pass tests */
-    ) {
-      setThemeColorClass('dark');
-    } else {
-      setThemeColorClass('');
-    }
-  };
+  const darkModeListener = useCallback(
+    (event: MediaQueryListEvent) => {
+      dispatch(setColorScheme(event.matches ? 'dark' : 'light'));
+    },
+    [dispatch],
+  );
 
-  const darkModeListener = (event: MediaQueryListEvent) => {
-    applyThemeColorMode(event.matches);
-  };
-
+  /** null operator > darkModeMatch()? < is used to avoid testing errors */
   useEffect(() => {
     darkModeMatch()?.addEventListener('change', darkModeListener);
-    applyThemeColorMode();
+    dispatch(setColorScheme(darkModeMatch()?.matches ? 'dark' : 'light'));
     return darkModeMatch()?.removeEventListener('change', darkModeListener);
-  });
+  }, [dispatch, darkModeListener]);
+
+  useEffect(() => {
+    setColorSchemeClass(colorScheme);
+  }, [colorScheme]);
 
   return (
-    <div className={themeColorClass}>
+    <div className={colorSchemeClass}>
       <div className={tailwindDefaults}>
         <Background />
         <ErrorBoundary fallback={<Error />}>
