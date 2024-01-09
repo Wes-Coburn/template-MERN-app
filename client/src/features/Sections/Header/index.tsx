@@ -82,7 +82,7 @@ export default function Header() {
           <DarkModeToggle />
           <NavLink
             to={ROUTES.getLogin()}
-            className="text-sm font-semibold leading-6 light:text-gray-900"
+            className="light:text-gray-900 text-sm font-semibold leading-6"
           >
             Log in <span aria-hidden="true">&rarr;</span>
           </NavLink>

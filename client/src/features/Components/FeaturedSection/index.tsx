@@ -11,11 +11,11 @@ export default function FeaturedSection() {
         <div className="grid place-content-center rounded p-6 sm:p-8">
           <div className="mx-auto max-w-md text-center lg:text-left">
             <header>
-              <h2 className="text-xl font-bold light:text-gray-900 sm:text-3xl">
+              <h2 className="light:text-gray-900 text-xl font-bold sm:text-3xl">
                 Watches
               </h2>
 
-              <p className="mt-4 light:text-gray-500">
+              <p className="light:text-gray-500 mt-4">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas
                 rerum quam amet provident nulla error!
               </p>
@@ -41,11 +41,11 @@ export default function FeaturedSection() {
                 />
 
                 <div className="mt-3">
-                  <h3 className="font-medium light:text-gray-900 group-hover:underline group-hover:underline-offset-4">
+                  <h3 className="light:text-gray-900 font-medium group-hover:underline group-hover:underline-offset-4">
                     Simple Watch
                   </h3>
 
-                  <p className="mt-1 text-sm light:text-gray-700">$150</p>
+                  <p className="light:text-gray-700 mt-1 text-sm">$150</p>
                 </div>
               </a>
             </li>
@@ -59,11 +59,11 @@ export default function FeaturedSection() {
                 />
 
                 <div className="mt-3">
-                  <h3 className="font-medium light:text-gray-900 group-hover:underline group-hover:underline-offset-4">
+                  <h3 className="light:text-gray-900 font-medium group-hover:underline group-hover:underline-offset-4">
                     Simple Watch
                   </h3>
 
-                  <p className="mt-1 text-sm light:text-gray-700">$150</p>
+                  <p className="light:text-gray-700 mt-1 text-sm">$150</p>
                 </div>
               </a>
             </li>

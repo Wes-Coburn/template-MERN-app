@@ -3,32 +3,32 @@
 export default function Pricing() {
   return (
     <section className="py-20 dark:dark:bg-gray-800 dark:dark:text-gray-100">
-      <div className="container px-4 mx-auto">
-        <div className="max-w-2xl mx-auto mb-16 text-center">
-          <span className="font-bold tracki uppercase dark:dark:text-violet-400">
+      <div className="container mx-auto px-4">
+        <div className="mx-auto mb-16 max-w-2xl text-center">
+          <span className="tracki font-bold uppercase dark:dark:text-violet-400">
             Pricing
           </span>
           <h2 className="text-4xl font-bold lg:text-5xl">
             Choose your best plan
           </h2>
         </div>
-        <div className="flex flex-wrap items-stretch -mx-4">
-          <div className="flex w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0">
-            <div className="flex flex-grow flex-col p-6 space-y-6 rounded shadow sm:p-8 dark:dark:bg-gray-900">
+        <div className="-mx-4 flex flex-wrap items-stretch">
+          <div className="mb-8 flex w-full sm:px-4 md:w-1/2 lg:mb-0 lg:w-1/3">
+            <div className="flex flex-grow flex-col space-y-6 rounded p-6 shadow sm:p-8 dark:dark:bg-gray-900">
               <div className="space-y-2">
                 <h4 className="text-2xl font-bold">Beginner</h4>
                 <span className="text-6xl font-bold">Free</span>
               </div>
-              <p className="mt-3 leadi dark:dark:text-gray-400">
+              <p className="leadi mt-3 dark:dark:text-gray-400">
                 Etiam ac convallis enim, eget euismod dolor.
               </p>
-              <ul className="flex-1 mb-6 dark:dark:text-gray-400">
-                <li className="flex mb-2 space-x-2">
+              <ul className="mb-6 flex-1 dark:dark:text-gray-400">
+                <li className="mb-2 flex space-x-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
-                    className="flex-shrink-0 w-6 h-6 dark:dark:text-violet-400"
+                    className="h-6 w-6 flex-shrink-0 dark:dark:text-violet-400"
                   >
                     <path
                       fillRule="evenodd"
@@ -38,12 +38,12 @@ export default function Pricing() {
                   </svg>
                   <span>Aenean quis</span>
                 </li>
-                <li className="flex mb-2 space-x-2">
+                <li className="mb-2 flex space-x-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
-                    className="flex-shrink-0 w-6 h-6 dark:dark:text-violet-400"
+                    className="h-6 w-6 flex-shrink-0 dark:dark:text-violet-400"
                   >
                     <path
                       fillRule="evenodd"
@@ -53,12 +53,12 @@ export default function Pricing() {
                   </svg>
                   <span>Morbi semper</span>
                 </li>
-                <li className="flex mb-2 space-x-2">
+                <li className="mb-2 flex space-x-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
-                    className="flex-shrink-0 w-6 h-6 dark:dark:text-violet-400"
+                    className="h-6 w-6 flex-shrink-0 dark:dark:text-violet-400"
                   >
                     <path
                       fillRule="evenodd"
@@ -71,19 +71,19 @@ export default function Pricing() {
               </ul>
               <button
                 type="button"
-                className="inline-block px-5 py-3 font-semibold tracki text-center rounded dark:dark:bg-violet-400 dark:dark:text-gray-900"
+                className="tracki inline-block rounded px-5 py-3 text-center font-semibold dark:dark:bg-violet-400 dark:dark:text-gray-900"
               >
                 Get Started
               </button>
             </div>
           </div>
-          <div className="flex w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0">
-            <div className="flex flex-grow flex-col p-6 space-y-6 rounded shadow sm:p-8 dark:dark:bg-violet-400 dark:dark:text-gray-900">
+          <div className="mb-8 flex w-full sm:px-4 md:w-1/2 lg:mb-0 lg:w-1/3">
+            <div className="flex flex-grow flex-col space-y-6 rounded p-6 shadow sm:p-8 dark:dark:bg-violet-400 dark:dark:text-gray-900">
               <div className="space-y-2">
                 <h4 className="text-2xl font-bold">Pro</h4>
                 <span className="text-6xl font-bold">
                   $24
-                  <span className="text-sm tracki">/month</span>
+                  <span className="tracki text-sm">/month</span>
                 </span>
               </div>
               <p className="leadi">
@@ -95,7 +95,7 @@ export default function Pricing() {
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
-                    className="flex-shrink-0 w-6 h-6"
+                    className="h-6 w-6 flex-shrink-0"
                   >
                     <path
                       fillRule="evenodd"
@@ -110,7 +110,7 @@ export default function Pricing() {
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
-                    className="flex-shrink-0 w-6 h-6"
+                    className="h-6 w-6 flex-shrink-0"
                   >
                     <path
                       fillRule="evenodd"
@@ -125,7 +125,7 @@ export default function Pricing() {
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
-                    className="flex-shrink-0 w-6 h-6"
+                    className="h-6 w-6 flex-shrink-0"
                   >
                     <path
                       fillRule="evenodd"
@@ -140,7 +140,7 @@ export default function Pricing() {
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
-                    className="flex-shrink-0 w-6 h-6"
+                    className="h-6 w-6 flex-shrink-0"
                   >
                     <path
                       fillRule="evenodd"
@@ -154,19 +154,19 @@ export default function Pricing() {
               <a
                 rel="noopener noreferrer"
                 href="#"
-                className="inline-block w-full px-5 py-3 font-bold tracki text-center rounded dark:dark:bg-gray-800 dark:dark:text-violet-400"
+                className="tracki inline-block w-full rounded px-5 py-3 text-center font-bold dark:dark:bg-gray-800 dark:dark:text-violet-400"
               >
                 Get Started
               </a>
             </div>
           </div>
-          <div className="flex w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0">
-            <div className="flex flex-grow flex-col p-6 space-y-6 rounded shadow sm:p-8 dark:dark:bg-gray-900">
+          <div className="mb-8 flex w-full sm:px-4 md:w-1/2 lg:mb-0 lg:w-1/3">
+            <div className="flex flex-grow flex-col space-y-6 rounded p-6 shadow sm:p-8 dark:dark:bg-gray-900">
               <div className="space-y-2">
                 <h4 className="text-2xl font-bold">Team</h4>
                 <span className="text-6xl font-bold">
                   $72
-                  <span className="text-sm tracki">/month</span>
+                  <span className="tracki text-sm">/month</span>
                 </span>
               </div>
               <p className="leadi dark:dark:text-gray-400">
@@ -178,7 +178,7 @@ export default function Pricing() {
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
-                    className="flex-shrink-0 w-6 h-6 dark:dark:text-violet-400"
+                    className="h-6 w-6 flex-shrink-0 dark:dark:text-violet-400"
                   >
                     <path
                       fillRule="evenodd"
@@ -193,7 +193,7 @@ export default function Pricing() {
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
-                    className="flex-shrink-0 w-6 h-6 dark:dark:text-violet-400"
+                    className="h-6 w-6 flex-shrink-0 dark:dark:text-violet-400"
                   >
                     <path
                       fillRule="evenodd"
@@ -208,7 +208,7 @@ export default function Pricing() {
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
-                    className="flex-shrink-0 w-6 h-6 dark:dark:text-violet-400"
+                    className="h-6 w-6 flex-shrink-0 dark:dark:text-violet-400"
                   >
                     <path
                       fillRule="evenodd"
@@ -223,7 +223,7 @@ export default function Pricing() {
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
-                    className="flex-shrink-0 w-6 h-6 dark:dark:text-violet-400"
+                    className="h-6 w-6 flex-shrink-0 dark:dark:text-violet-400"
                   >
                     <path
                       fillRule="evenodd"
@@ -238,7 +238,7 @@ export default function Pricing() {
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
-                    className="flex-shrink-0 w-6 h-6 dark:dark:text-violet-400"
+                    className="h-6 w-6 flex-shrink-0 dark:dark:text-violet-400"
                   >
                     <path
                       fillRule="evenodd"
@@ -252,7 +252,7 @@ export default function Pricing() {
               <a
                 rel="noopener noreferrer"
                 href="#"
-                className="inline-block w-full px-5 py-3 font-semibold tracki text-center rounded dark:dark:bg-violet-400 dark:dark:text-gray-900"
+                className="tracki inline-block w-full rounded px-5 py-3 text-center font-semibold dark:dark:bg-violet-400 dark:dark:text-gray-900"
               >
                 Get Started
               </a>

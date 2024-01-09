@@ -9,11 +9,11 @@ export default function CallToAction() {
     <section className="overflow-hidden sm:grid sm:grid-cols-2 sm:items-center">
       <div className="p-8 md:p-12 lg:px-16 lg:py-24">
         <div className="mx-auto max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white md:text-3xl">
+          <h2 className="text-2xl font-bold text-gray-900 md:text-3xl dark:text-white">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit
           </h2>
 
-          <p className="hidden text-gray-500 dark:text-gray-400 md:mt-4 md:block">
+          <p className="hidden text-gray-500 md:mt-4 md:block dark:text-gray-400">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, egestas
             tempus tellus etiam sed. Quam a scelerisque amet ullamcorper eu enim
             et fermentum, augue. Aliquet amet volutpat quisque ut interdum

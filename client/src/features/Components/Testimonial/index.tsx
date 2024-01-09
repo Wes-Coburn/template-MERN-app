@@ -9,11 +9,11 @@ export default function Testimonial() {
     <div className="mx-auto max-w-screen-2xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
       <div className="md:flex md:items-end md:justify-between">
         <div className="max-w-xl">
-          <h2 className="text-4xl font-bold tracking-tight light:text-gray-900 sm:text-5xl">
+          <h2 className="light:text-gray-900 text-4xl font-bold tracking-tight sm:text-5xl">
             Read trusted reviews from our customers
           </h2>
 
-          <p className="mt-6 max-w-lg leading-relaxed light:text-gray-700">
+          <p className="light:text-gray-700 mt-6 max-w-lg leading-relaxed">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
             praesentium natus sapiente commodi. Aliquid sunt tempore iste
             repellendus explicabo dignissimos placeat, autem harum dolore
@@ -99,7 +99,7 @@ export default function Testimonial() {
                 Stayin&apos; Alive
               </p>
 
-              <p className="mt-4 leading-relaxed light:text-gray-700">
+              <p className="light:text-gray-700 mt-4 leading-relaxed">
                 No, Rose, they are not breathing. And they have no arms or legs
                 … Where are they? You know what? If we come across somebody with
                 no arms or legs, do we bother resuscitating them? I mean, what
@@ -108,7 +108,7 @@ export default function Testimonial() {
             </div>
           </div>
 
-          <footer className="mt-4 text-sm font-medium light:text-gray-700 sm:mt-6">
+          <footer className="light:text-gray-700 mt-4 text-sm font-medium sm:mt-6">
             &mdash; Michael Scott
           </footer>
         </blockquote>
@@ -167,7 +167,7 @@ export default function Testimonial() {
                 Stayin&apos; Alive
               </p>
 
-              <p className="mt-4 leading-relaxed light:text-gray-700">
+              <p className="light:text-gray-700 mt-4 leading-relaxed">
                 No, Rose, they are not breathing. And they have no arms or legs
                 … Where are they? You know what? If we come across somebody with
                 no arms or legs, do we bother resuscitating them? I mean, what
@@ -176,7 +176,7 @@ export default function Testimonial() {
             </div>
           </div>
 
-          <footer className="mt-4 text-sm font-medium light:text-gray-700 sm:mt-6">
+          <footer className="light:text-gray-700 mt-4 text-sm font-medium sm:mt-6">
             &mdash; Michael Scott
           </footer>
         </blockquote>
@@ -235,7 +235,7 @@ export default function Testimonial() {
                 Stayin&apos; Alive
               </p>
 
-              <p className="mt-4 leading-relaxed light:text-gray-700">
+              <p className="light:text-gray-700 mt-4 leading-relaxed">
                 No, Rose, they are not breathing. And they have no arms or legs
                 … Where are they? You know what? If we come across somebody with
                 no arms or legs, do we bother resuscitating them? I mean, what
@@ -244,7 +244,7 @@ export default function Testimonial() {
             </div>
           </div>
 
-          <footer className="mt-4 text-sm font-medium light:text-gray-700 sm:mt-6">
+          <footer className="light:text-gray-700 mt-4 text-sm font-medium sm:mt-6">
             &mdash; Michael Scott
           </footer>
         </blockquote>

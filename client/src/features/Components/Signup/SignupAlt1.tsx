@@ -81,7 +81,7 @@ export default function Login() {
                 <div className="col-span-6 sm:col-span-3">
                   <label
                     htmlFor="FirstName"
-                    className="block text-sm font-medium light:text-gray-700"
+                    className="light:text-gray-700 block text-sm font-medium"
                   >
                     First Name
                     <input
@@ -96,7 +96,7 @@ export default function Login() {
                 <div className="col-span-6 sm:col-span-3">
                   <label
                     htmlFor="LastName"
-                    className="block text-sm font-medium light:text-gray-700"
+                    className="light:text-gray-700 block text-sm font-medium"
                   >
                     Last Name
                     <input
@@ -111,7 +111,7 @@ export default function Login() {
                 <div className="col-span-6">
                   <label
                     htmlFor="Email"
-                    className="block text-sm font-medium light:text-gray-700"
+                    className="light:text-gray-700 block text-sm font-medium"
                   >
                     {' '}
                     Email{' '}
@@ -128,7 +128,7 @@ export default function Login() {
                 <div className="col-span-6 sm:col-span-3">
                   <label
                     htmlFor="Password"
-                    className="block text-sm font-medium light:text-gray-700"
+                    className="light:text-gray-700 block text-sm font-medium"
                   >
                     {' '}
                     Password{' '}
@@ -145,7 +145,7 @@ export default function Login() {
                 <div className="col-span-6 sm:col-span-3">
                   <label
                     htmlFor="PasswordConfirmation"
-                    className="block text-sm font-medium light:text-gray-700"
+                    className="light:text-gray-700 block text-sm font-medium"
                   >
                     Password Confirmation
                     <input
@@ -166,7 +166,7 @@ export default function Login() {
                       className="h-5 w-5 rounded-md border-gray-200 bg-white shadow-sm"
                     />
 
-                    <span className="text-sm light:text-gray-700">
+                    <span className="light:text-gray-700 text-sm">
                       I want to receive emails about events, product updates and
                       company announcements.
                     </span>
@@ -174,7 +174,7 @@ export default function Login() {
                 </div>
 
                 <div className="col-span-6">
-                  <p className="text-sm light:text-gray-500">
+                  <p className="light:text-gray-500 text-sm">
                     By creating an account, you agree to our{' '}
                     <a href="#" className="light:text-gray-700 underline">
                       terms and conditions
@@ -195,7 +195,7 @@ export default function Login() {
                     Create an account
                   </button>
 
-                  <p className="mt-4 text-sm light:text-gray-500 sm:mt-0">
+                  <p className="light:text-gray-500 mt-4 text-sm sm:mt-0">
                     Already have an account?{' '}
                     <a href="#" className="light:text-gray-700 underline">
                       Log in

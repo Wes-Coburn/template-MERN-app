@@ -11,7 +11,7 @@ export default function Login() {
           Get started today
         </h1>
 
-        <p className="mx-auto mt-4 max-w-md text-center light:text-gray-500">
+        <p className="light:text-gray-500 mx-auto mt-4 max-w-md text-center">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati
           sunt dolores deleniti inventore quaerat mollitia?
         </p>
@@ -97,7 +97,7 @@ export default function Login() {
             Sign in
           </button>
 
-          <p className="text-center text-sm light:text-gray-500">
+          <p className="light:text-gray-500 text-center text-sm">
             No account?{' '}
             <a className="underline" href="">
               Sign up

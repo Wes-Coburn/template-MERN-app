@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 export default function Popup() {
   return (
-    <section className="fixed inset-x-4 top-56 z-50 bg-gray-900 rounded-3xl shadow-2xl">
+    <section className="fixed inset-x-4 top-56 z-50 rounded-3xl bg-gray-900 shadow-2xl">
       <div className="p-8 text-center sm:p-12">
         <p className="text-sm font-semibold uppercase tracking-widest text-pink-500">
           Your order is on the way

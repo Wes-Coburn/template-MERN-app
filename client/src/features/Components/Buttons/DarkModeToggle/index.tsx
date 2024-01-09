@@ -59,7 +59,7 @@ export default function DarkModeToggle() {
   return (
     <button
       type="button"
-      className="w-20 h-8 rounded-full bg-white flex items-center transition duration-300 focus:outline-none shadow"
+      className="flex h-8 w-20 items-center rounded-full bg-white shadow transition duration-300 focus:outline-none"
       onClick={() => dispatch(toggleColorScheme())}
     >
       {colorScheme === 'light' ? lightThemeIcon : darkThemeIcon}
