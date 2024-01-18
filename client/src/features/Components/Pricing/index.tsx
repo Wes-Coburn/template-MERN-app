@@ -14,7 +14,7 @@ export default function Pricing() {
         </div>
         <div className="-mx-4 flex flex-wrap items-stretch">
           <div className="mb-8 flex w-full sm:px-4 md:w-1/2 lg:mb-0 lg:w-1/3">
-            <div className="flex flex-grow flex-col space-y-6 rounded p-6 shadow sm:p-8 dark:dark:bg-gray-900">
+            <div className="flex flex-grow flex-col space-y-6 rounded p-6 shadow dark:dark:bg-gray-900 sm:p-8">
               <div className="space-y-2">
                 <h4 className="text-2xl font-bold">Beginner</h4>
                 <span className="text-6xl font-bold">Free</span>
@@ -78,7 +78,7 @@ export default function Pricing() {
             </div>
           </div>
           <div className="mb-8 flex w-full sm:px-4 md:w-1/2 lg:mb-0 lg:w-1/3">
-            <div className="flex flex-grow flex-col space-y-6 rounded p-6 shadow sm:p-8 dark:dark:bg-violet-400 dark:dark:text-gray-900">
+            <div className="flex flex-grow flex-col space-y-6 rounded p-6 shadow dark:dark:bg-violet-400 dark:dark:text-gray-900 sm:p-8">
               <div className="space-y-2">
                 <h4 className="text-2xl font-bold">Pro</h4>
                 <span className="text-6xl font-bold">
@@ -161,7 +161,7 @@ export default function Pricing() {
             </div>
           </div>
           <div className="mb-8 flex w-full sm:px-4 md:w-1/2 lg:mb-0 lg:w-1/3">
-            <div className="flex flex-grow flex-col space-y-6 rounded p-6 shadow sm:p-8 dark:dark:bg-gray-900">
+            <div className="flex flex-grow flex-col space-y-6 rounded p-6 shadow dark:dark:bg-gray-900 sm:p-8">
               <div className="space-y-2">
                 <h4 className="text-2xl font-bold">Team</h4>
                 <span className="text-6xl font-bold">

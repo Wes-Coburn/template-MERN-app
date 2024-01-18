@@ -1,4 +1,5 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
 import ROUTES, { PATHS } from '../../../app/routes';
 import NotFound from '../../Utilities/NotFound';
 import Login from '../../Components/Login';
@@ -6,7 +7,7 @@ import LoginAlt1 from '../../Components/Login/LoginAlt1';
 import Signup from '../../Components/Signup';
 import SignupAlt1 from '../../Components/Signup/SignupAlt1';
 import CallToAction from '../../Components/CallToAction';
-import CallToActionAlt1 from '../../Components/CallToAction/alt1';
+import CallToActionAlt1 from '../../Components/CallToAction/CallToActionAlt1';
 import LinkGrid from '../../Components/LinkGrid';
 import ProductGallery from '../../Components/ProductGallery';
 import FeaturedSection from '../../Components/FeaturedSection';
@@ -116,7 +117,7 @@ export default function Main() {
         />
         {pages.map((page) => {
           return (
-            <Route key={page.path} path={page.path} element={page.element} />
+            <Route key={uuidv4()} path={page.path} element={page.element} />
           );
         })}
         <Route path={PATHS.NOT_FOUND()} element={<NotFound />} />

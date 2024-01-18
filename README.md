@@ -25,12 +25,14 @@ npx degit Wes-Coburn/template-MERN-app my-app
 - Node
 - React Testing Library
 - [React-Helmet](https://www.npmjs.com/package/react-helmet)
+- ESLint
 
 ## Development
 
 ### TODO!
 
 - Create 'server/config.env' with ['config.sample-env'](server/config.sample-env) structure.
+- Create 'client/.env' with ['.sample-env'](client/.sample-env) structure.
   - Alternatively, configure *secrets* in your deployment.
 - Update [manifest.json](/client/manifest.json)
 - Update [appInfo.json](/client//appInfo.json)

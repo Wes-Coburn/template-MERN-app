@@ -15,12 +15,12 @@ module.exports = {
     tsconfigRootDir: __dirname,
   },
   ignorePatterns: [
-    'dist',
-    'build',
     '.eslintrc.cjs',
     'vite.config.ts',
     'tailwind.config.js',
-  ], // "out" for jsdoc
+    'dist',
+    'build',
+  ],
   rules: {
     'no-constant-binary-expression': 'error',
     'react/react-in-jsx-scope': 'off',

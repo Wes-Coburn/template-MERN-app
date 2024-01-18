@@ -32,7 +32,7 @@ export default function Login() {
               </svg>
             </a>
 
-            <h1 className="mt-6 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl dark:text-white">
+            <h1 className="mt-6 text-2xl font-bold text-gray-900 dark:text-white sm:text-3xl md:text-4xl">
               Welcome to Squid 🦑
             </h1>
 
@@ -161,7 +161,7 @@ export default function Login() {
                   Create an account
                 </button>
 
-                <p className="mt-4 text-sm text-gray-500 sm:mt-0 dark:text-gray-400">
+                <p className="mt-4 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
                   Already have an account?{' '}
                   <a
                     href="#"

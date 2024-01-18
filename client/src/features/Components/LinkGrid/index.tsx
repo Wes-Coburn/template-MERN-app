@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import { v4 as uuidv4 } from 'uuid';
 
 interface Link {
   name: string;
@@ -8,7 +9,7 @@ interface Link {
 const linkTile = ({ name, description }: Link) => {
   return (
     <a
-      key={name}
+      key={uuidv4()}
       className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10"
       href="/services/digital-campaigns"
     >

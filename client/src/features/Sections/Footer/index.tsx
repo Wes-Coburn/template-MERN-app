@@ -392,6 +392,15 @@ export default function Footer() {
           &copy; 2022. Company Name. All rights reserved.
         </p>
       </div>
+
+      <div className="pb-24 text-center">
+        <a
+          href="https://wescoburn.dev/"
+          className="text-xl font-semibold text-gray-300 hover:text-gray-400"
+        >
+          WesCoburn.dev
+        </a>
+      </div>
     </footer>
   );
 }

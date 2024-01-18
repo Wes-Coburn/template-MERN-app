@@ -3,6 +3,7 @@ import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/16/solid';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
 import DarkModeToggle from '../../Components/Buttons/DarkModeToggle';
 import ROUTES from '../../../app/routes';
 import Menu from '../../Components/Menu';
@@ -72,7 +73,7 @@ export default function Header() {
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
           {navigationPrimary.map((item) => (
-            <NavLink key={item.name} to={item.href} className={activeLink}>
+            <NavLink key={uuidv4()} to={item.href} className={activeLink}>
               {item.name}
             </NavLink>
           ))}
@@ -97,14 +98,14 @@ export default function Header() {
         <div className="fixed inset-0 z-50" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
+            <NavLink to={ROUTES.getHome()} className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <img
                 className="h-8 w-auto"
                 src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                 alt=""
               />
-            </a>
+            </NavLink>
             <button
               type="button"
               className="-m-2.5 rounded-md p-2.5 text-gray-700"
@@ -118,22 +119,22 @@ export default function Header() {
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 {navigationPrimary.concat(navigationSecondary).map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
+                  <NavLink
+                    key={uuidv4()}
+                    to={item.href}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
                     {item.name}
-                  </a>
+                  </NavLink>
                 ))}
               </div>
               <div className="py-6">
-                <a
-                  href="#"
+                <NavLink
+                  to="#"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Log in
-                </a>
+                </NavLink>
               </div>
             </div>
           </div>

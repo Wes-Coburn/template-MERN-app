@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
 
 interface IProps {
   name: string;
@@ -30,7 +31,7 @@ export default function Menu({ name, links }: IProps) {
           links.map((link) => {
             return (
               <NavLink
-                key={link.href}
+                key={uuidv4()}
                 to={link.href}
                 onClick={toggleMenuOpen}
                 className="block bg-gray-200 px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-500 dark:hover:bg-gray-800 dark:hover:text-gray-200"

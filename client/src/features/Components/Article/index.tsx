@@ -30,7 +30,7 @@ export default function Article() {
           <img
             src="https://source.unsplash.com/75x75/?portrait"
             alt=""
-            className="h-24 w-24 flex-shrink-0 self-center rounded-full border md:justify-self-start dark:dark:border-gray-700 dark:dark:bg-gray-500"
+            className="h-24 w-24 flex-shrink-0 self-center rounded-full border dark:dark:border-gray-700 dark:dark:bg-gray-500 md:justify-self-start"
           />
           <div className="flex flex-col">
             <h4 className="text-lg font-semibold">Leroy Jenkins</h4>
