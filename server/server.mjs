@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
-import "./loadEnvironment.mjs";
-import notes from "../routes/note.mjs";
+import "./src/loadEnvironment.mjs";
+import notes from "./src/routes/note.mjs";
 
 const PORT = 5050;
 const app = express();
