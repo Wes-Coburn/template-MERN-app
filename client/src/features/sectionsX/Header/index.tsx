@@ -3,9 +3,9 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/16/solid';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
-import DarkModeToggle from '../../Components/Buttons/DarkModeToggle';
-import ROUTES from '../../../app/routes';
-import Menu from '../../Components/Menu';
+import DarkModeToggle from '@components/Buttons/DarkModeToggle';
+import ROUTES from '@src/app/routes';
+import Menu from '@components/Menu';
 
 const activeLink = ({
   isActive,

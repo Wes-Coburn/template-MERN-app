@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
-import { CANONICAL } from '../../../app/routes';
-import * as appInfo from '../../../../appInfo.json';
+import { CANONICAL } from '@src/app/routes';
+import * as appInfo from '@/appInfo.json';
 // eslint-disable-next-line import/no-absolute-path
 import logo from '/logo.svg';
 

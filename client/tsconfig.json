@@ -5,7 +5,9 @@
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "baseUrl": "./",
     "paths": {
-      "@src/*": ["./src/*"]
+      "@/*": ["./*"],
+      "@src/*": ["./src/*"],
+      "@components/*": ["./src/features/components/*"]
     },
     "moduleResolution": "bundler",
     "jsx": "react-jsx",

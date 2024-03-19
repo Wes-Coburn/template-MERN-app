@@ -30,7 +30,11 @@ export default defineConfig({
     },
   },
   resolve: {
-    alias: { '@src': path.resolve(__dirname, './src') },
+    alias: {
+      '@': path.resolve(__dirname, './'),
+      '@src': path.resolve(__dirname, './src'),
+      '@components': path.resolve(__dirname, './src/features/components'),
+    },
   },
   test: {
     globals: true,
