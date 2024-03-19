@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import Heading from '../../Sections/Heading';
+import Heading from '@sections/Heading';
 import { PATHS } from '../../../app/routes';
 
 /**

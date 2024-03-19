@@ -34,6 +34,7 @@ export default defineConfig({
       '@': path.resolve(__dirname, './'),
       '@src': path.resolve(__dirname, './src'),
       '@components': path.resolve(__dirname, './src/features/components'),
+      '@sections': path.resolve(__dirname, './src/features/sections'),
     },
   },
   test: {
