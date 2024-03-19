@@ -1,4 +1,4 @@
-import errorImage from '../../../assets/images/errorImage.svg';
+import errorImage from '@src/assets/images/errorImage.svg';
 
 /**
  * error page - with graphic

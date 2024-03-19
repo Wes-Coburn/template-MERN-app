@@ -17,6 +17,7 @@ module.exports = {
   ignorePatterns: [
     '.eslintrc.cjs',
     'vite.config.ts',
+    'vitest.config.ts',
     'tailwind.config.js',
     'dist',
     'build',
