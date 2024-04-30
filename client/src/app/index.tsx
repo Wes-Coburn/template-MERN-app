@@ -8,11 +8,9 @@ import Header from '@sections/Header';
 import Footer from '@sections/Footer';
 import Main from '@sections/Main';
 import Background from '@sections/Background';
-import { PATHS } from './routes';
 import Error from '../features/utilities/Error';
 import { useAppDispatch, useAppSelector } from './hooks';
 import { selectColorScheme, setColorScheme } from './userSlice';
-// import PopupAlt1 from '../features/Components/Popups/PopupAlt1';
 // import responsive from './responsive';
 
 const tailwindDefaults = 'dark:text-white';
@@ -47,7 +45,6 @@ export function AppContent() {
         <Background />
         <ErrorBoundary fallback={<Error />}>
           <Popup />
-          {/* <PopupAlt1 /> */}
           <Header />
           <Main />
           <Footer />
@@ -62,7 +59,7 @@ function App() {
   return (
     <HelmetProvider>
       <Router>
-        <Heading pageURL={PATHS.ROOT()} />
+        <Heading pageUrl="" pageTitle="" />
         <AppContent />
       </Router>
     </HelmetProvider>

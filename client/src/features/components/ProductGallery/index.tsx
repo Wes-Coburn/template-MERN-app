@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import { v4 as uuidv4 } from 'uuid';
 
 interface Product {
   name: string;
@@ -7,7 +8,7 @@ interface Product {
 
 const productTile = ({ name, price }: Product) => {
   return (
-    <li>
+    <li key={uuidv4()}>
       <a href="#" className="group block overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"

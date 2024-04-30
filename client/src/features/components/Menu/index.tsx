@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 interface IProps {
   name: string;
-  links: Array<{ name: string; href: string }>;
+  links: Array<{ title: string; path: string }>;
 }
 
 export default function Menu({ name, links }: IProps) {
@@ -32,11 +32,11 @@ export default function Menu({ name, links }: IProps) {
             return (
               <NavLink
                 key={uuidv4()}
-                to={link.href}
+                to={link.path}
                 onClick={toggleMenuOpen}
                 className="block bg-gray-200 px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-500 dark:hover:bg-gray-800 dark:hover:text-gray-200"
               >
-                {link.name}
+                {link.title}
               </NavLink>
             );
           })}

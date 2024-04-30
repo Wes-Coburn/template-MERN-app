@@ -1,20 +1,8 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Navigate, Route } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
-import ROUTES, { PATHS } from '@src/app/routes';
+import ROUTES, { PageRoute } from '@src/app/routes';
 import NotFound from '@src/features/utilities/NotFound';
-import Login from '@components/Login';
-import LoginAlt1 from '@components/Login/LoginAlt1';
-import Signup from '@components/Signup';
-import SignupAlt1 from '@components/Signup/SignupAlt1';
-import CallToAction from '@components/CallToAction';
-import CallToActionAlt1 from '@components/CallToAction/CallToActionAlt1';
-import LinkGrid from '@components/LinkGrid';
-import ProductGallery from '@components/ProductGallery';
-import FeaturedSection from '@components/FeaturedSection';
-import Testimonial from '@components/Testimonial';
-import FAQ from '@components/FAQ';
-import Article from '@components/Article';
-import Pricing from '@components/Pricing';
+import Heading from '../Heading';
 // import { isMobileDomain } from '../../app/responsive';
 
 /** uncomment if subdomain is configured in responsive.ts */
@@ -35,75 +23,39 @@ const deviceDomain = () => {
 };
 */
 
-const pageWrapper = (content: JSX.Element, topPadding: boolean = true) => {
+const pageWrapper = (
+  content: JSX.Element,
+  pageUrl: string,
+  pageTitle: string,
+) => {
   return (
-    <main
-      role="main"
-      className={topPadding ? 'min-h-dvh pt-8 sm:pt-12 lg:pt-16' : ''}
-    >
-      {content}
-    </main>
+    <>
+      <Heading pageUrl={pageUrl} pageTitle={pageTitle} />
+      <main
+        role="main"
+        className="relative -top-[80px] min-h-dvh lg:-top-[88px]"
+        // !!! TOP OFFSET IS RELATIVE TO THE <Header /> COMPONENT'S HEIGHT !!!
+      >
+        {content}
+      </main>
+    </>
   );
 };
 
-interface Page {
-  path: string;
-  element: JSX.Element;
-}
-
-const pages: Page[] = [
-  {
-    path: PATHS.home(),
-    element: pageWrapper(<CallToAction />),
-  },
-  {
-    path: PATHS.login(),
-    element: pageWrapper(<Login />, false),
-  },
-  {
-    path: PATHS.loginAlt1(),
-    element: pageWrapper(<LoginAlt1 />),
-  },
-  {
-    path: PATHS.signup(),
-    element: pageWrapper(<Signup />, false),
-  },
-  {
-    path: PATHS.signupAlt1(),
-    element: pageWrapper(<SignupAlt1 />, false),
-  },
-  {
-    path: PATHS.linkGrid(),
-    element: pageWrapper(<LinkGrid />),
-  },
-  {
-    path: PATHS.productGallery(),
-    element: pageWrapper(<ProductGallery />),
-  },
-  {
-    path: PATHS.featuredSection(),
-    element: pageWrapper(<FeaturedSection />),
-  },
-  {
-    path: PATHS.callToAction(),
-    element: pageWrapper(<CallToActionAlt1 />),
-  },
-  {
-    path: PATHS.testimonial(),
-    element: pageWrapper(<Testimonial />),
-  },
-  {
-    path: PATHS.article(),
-    element: pageWrapper(<Article />),
-  },
-  {
-    path: PATHS.FAQ(),
-    element: pageWrapper(<FAQ />),
-  },
-  {
-    path: PATHS.pricing(),
-    element: pageWrapper(<Pricing />),
-  },
+const pageRoutes: PageRoute[] = [
+  ROUTES.home(),
+  ROUTES.login(),
+  ROUTES.loginAlt1(),
+  ROUTES.signup(),
+  ROUTES.signupAlt1(),
+  ROUTES.linkGrid(),
+  ROUTES.productGallery(),
+  ROUTES.featuredSection(),
+  ROUTES.callToAction(),
+  ROUTES.testimonial(),
+  ROUTES.article(),
+  ROUTES.FAQ(),
+  ROUTES.pricing(),
 ];
 
 export default function Main() {
@@ -112,15 +64,20 @@ export default function Main() {
       {/* deviceDomain() */}
       <Routes>
         <Route
-          path={PATHS.ROOT()}
-          element={<Navigate to={ROUTES.getHome()} replace />}
+          path={ROUTES.ROOT().path}
+          element={<Navigate to={ROUTES.home().path} replace />}
         />
-        {pages.map((page) => {
+        {pageRoutes.map((pageRoute) => {
+          const element = pageWrapper(
+            pageRoute.element,
+            pageRoute.path,
+            pageRoute.title,
+          );
           return (
-            <Route key={uuidv4()} path={page.path} element={page.element} />
+            <Route key={uuidv4()} path={pageRoute.path} element={element} />
           );
         })}
-        <Route path={PATHS.NOT_FOUND()} element={<NotFound />} />
+        <Route path={ROUTES.NOT_FOUND().path} element={<NotFound />} />
       </Routes>
     </>
   );

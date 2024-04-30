@@ -2,7 +2,6 @@
 export default function CallToAction() {
   return (
     <div className="mx-auto max-w-2xl px-6 py-32 sm:py-48 lg:px-8 lg:py-56">
-      {/* removed min-h-dvh ^^^ */}
       <div className="hidden sm:mb-8 sm:flex sm:justify-center">
         <div className="light:text-gray-600 relative rounded-full px-3 py-1 text-sm leading-6 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
           Announcing our next round of funding.{' '}

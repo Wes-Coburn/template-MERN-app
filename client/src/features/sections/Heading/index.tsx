@@ -5,8 +5,8 @@ import * as appInfo from '@/appInfo.json';
 import logo from '/logo.svg';
 
 type Props = {
-  pageURL: string;
-  pageTitle?: string;
+  pageUrl: string;
+  pageTitle: string;
   appDescription?: string;
   themeColor?: string;
   iconUrl?: string;
@@ -14,7 +14,7 @@ type Props = {
 };
 
 export default function Heading({
-  pageURL,
+  pageUrl,
   pageTitle,
   appDescription,
   themeColor,
@@ -24,8 +24,8 @@ export default function Heading({
   return (
     <Helmet>
       {/* Basic Meta Info */}
-      <title>{pageTitle}</title>
-      <link rel="canonical" href={CANONICAL.desktop(pageURL)} />
+      <title>{`${appInfo.titleDefault}${pageTitle ? ' | ' : ''}${pageTitle}`}</title>
+      <link rel="canonical" href={CANONICAL.desktop(pageUrl)} />
       {/* 
       <link
         rel="alternate"
@@ -43,14 +43,14 @@ export default function Heading({
 
       {/* Facebook Open Graph Meta Info */}
       <meta property="og:type" content="website" />
-      <meta property="og:url" content={pageURL} />
+      <meta property="og:url" content={pageUrl} />
       <meta property="og:title" content={pageTitle} />
       <meta property="og:description" content={appDescription} />
       <meta property="og:image" content={iconUrl} />
 
       {/* Twitter Meta Info */}
       <meta name="twitter:card" content="summary" />
-      <meta name="twitter:url" content={pageURL} />
+      <meta name="twitter:url" content={pageUrl} />
       <meta name="twitter:title" content={pageTitle} />
       <meta name="twitter:description" content={appDescription} />
       <meta name="twitter:image" content={iconUrl} />
@@ -60,7 +60,6 @@ export default function Heading({
 }
 
 Heading.defaultProps = {
-  pageTitle: appInfo.titleDefault,
   appDescription: appInfo.descriptionDefault,
   themeColor: appInfo.themeColor,
   iconUrl: logo,

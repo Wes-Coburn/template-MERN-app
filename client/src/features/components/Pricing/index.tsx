@@ -2,7 +2,7 @@
 
 export default function Pricing() {
   return (
-    <section className="py-20 dark:dark:bg-gray-800 dark:dark:text-gray-100">
+    <section className="py-20 dark:dark:text-gray-100">
       <div className="container mx-auto px-4">
         <div className="mx-auto mb-16 max-w-2xl text-center">
           <span className="tracki font-bold uppercase dark:dark:text-violet-400">

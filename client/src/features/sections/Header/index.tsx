@@ -1,11 +1,12 @@
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/16/solid';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import DarkModeToggle from '@components/Buttons/DarkModeToggle';
 import ROUTES from '@src/app/routes';
 import Menu from '@components/Menu';
+import ccn from '@src/utils/createClassName';
 
 const activeLink = ({
   isActive,
@@ -20,38 +21,48 @@ const activeLink = ({
   return linkStyle;
 };
 
-interface Link {
-  name: string;
-  href: string;
-}
+const navigationPrimary = [ROUTES.home()];
 
-const navigationPrimary: Link[] = [{ name: 'Home', href: ROUTES.getHome() }];
-
-const navigationSecondary: Link[] = [
-  { name: 'Login-Alt1', href: ROUTES.getLoginAlt1() },
-  { name: 'Signup', href: ROUTES.getSignup() },
-  { name: 'Signup-Alt1', href: ROUTES.getSignupAlt1() },
-  { name: 'Link Grid', href: ROUTES.getLinkGrid() },
-  { name: 'Product Gallery', href: ROUTES.getProductGallery() },
-  { name: 'Featured Section', href: ROUTES.getFeaturedSection() },
-  { name: 'Call to Action', href: ROUTES.getCallToAction() },
-  { name: 'Testimonial', href: ROUTES.getTestimonial() },
-  { name: 'FAQ', href: ROUTES.getFAQ() },
-  { name: 'Article', href: ROUTES.getArticle() },
-  { name: 'Pricing', href: ROUTES.getPricing() },
+const navigationSecondary = [
+  ROUTES.loginAlt1(),
+  ROUTES.signup(),
+  ROUTES.signupAlt1(),
+  ROUTES.linkGrid(),
+  ROUTES.productGallery(),
+  ROUTES.featuredSection(),
+  ROUTES.callToAction(),
+  ROUTES.testimonial(),
+  ROUTES.FAQ(),
+  ROUTES.article(),
+  ROUTES.pricing(),
 ];
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrollY, setScrollY] = useState(window.scrollY);
+
+  const gradientClassname = ccn`bg-size-200 bg-pos-100 bg-gradient-to-b from-gray-100/70 via-gray-100 
+  to-gray-200/70 dark:from-gray-700/70 dark:via-gray-700 dark:to-gray-800/70`;
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <header className="absolute inset-x-0 top-0 z-40">
+    <header
+      className={`sticky top-0 z-40 transition-all duration-700 ${scrollY !== 0 ? gradientClassname : 'bg-pos-0'}`}
+    >
       <nav
         className="flex items-center justify-between p-6 lg:px-8"
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <NavLink to={ROUTES.getHome()} className="-m-1.5 p-1.5">
+          <NavLink to={ROUTES.home().path} className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
             <img
               className="h-8 w-auto"
@@ -72,8 +83,8 @@ export default function Header() {
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
           {navigationPrimary.map((item) => (
-            <NavLink key={uuidv4()} to={item.href} className={activeLink}>
-              {item.name}
+            <NavLink key={uuidv4()} to={item.path} className={activeLink}>
+              {item.title}
             </NavLink>
           ))}
           <Menu name="Components" links={navigationSecondary} />
@@ -81,7 +92,7 @@ export default function Header() {
         <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-16">
           <DarkModeToggle />
           <NavLink
-            to={ROUTES.getLogin()}
+            to={ROUTES.login().path}
             className="light:text-gray-900 text-sm font-semibold leading-6"
           >
             Log in <span aria-hidden="true">&rarr;</span>
@@ -97,7 +108,7 @@ export default function Header() {
         <div className="fixed inset-0 z-50" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <NavLink to={ROUTES.getHome()} className="-m-1.5 p-1.5">
+            <NavLink to={ROUTES.home().path} className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <img
                 className="h-8 w-auto"
@@ -120,11 +131,11 @@ export default function Header() {
                 {navigationPrimary.concat(navigationSecondary).map((item) => (
                   <NavLink
                     key={uuidv4()}
-                    to={item.href}
+                    to={item.path}
                     onClick={() => setMobileMenuOpen(false)}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
-                    {item.name}
+                    {item.title}
                   </NavLink>
                 ))}
               </div>
