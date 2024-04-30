@@ -41,8 +41,8 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(window.scrollY);
 
-  const gradientClassname = ccn`bg-size-200 bg-pos-100 bg-gradient-to-b from-gray-100/70 via-gray-100 
-  to-gray-200/70 dark:from-gray-700/70 dark:via-gray-700 dark:to-gray-800/70`;
+  const gradientClassname = ccn`bg-gradient-to-b from-gray-100/70 via-gray-100 to-gray-200/70 bg-size-200 
+  bg-pos-100 dark:from-gray-700/70 dark:via-gray-700 dark:to-gray-800/70`;
 
   useEffect(() => {
     const handleScroll = () => {
