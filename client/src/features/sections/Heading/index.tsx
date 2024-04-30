@@ -26,7 +26,7 @@ export default function Heading({
       {/* Basic Meta Info */}
       <title>{`${appInfo.titleDefault}${pageTitle ? ' | ' : ''}${pageTitle}`}</title>
       <link rel="canonical" href={CANONICAL.desktop(pageUrl)} />
-      {/* 
+      {/* Configure the alternate canonical URL for mobile, if one exists
       <link
         rel="alternate"
         media={QUERIES.mobile}

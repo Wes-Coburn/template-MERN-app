@@ -16,7 +16,10 @@ import { selectColorScheme, setColorScheme } from './userSlice';
 const tailwindDefaults = 'dark:text-white';
 const darkModeMatch = () => window.matchMedia('(prefers-color-scheme: dark)');
 
-export function AppContent() {
+interface IProps {
+  isTest?: boolean;
+}
+export function AppContent({ isTest }: IProps) {
   const dispatch = useAppDispatch();
   const colorScheme = useAppSelector(selectColorScheme);
   const [colorSchemeClass, setColorSchemeClass] = useState<string>('');
@@ -28,7 +31,7 @@ export function AppContent() {
     [dispatch],
   );
 
-  /** null operator > darkModeMatch()? < is used to avoid testing errors */
+  /** 'darkModeMatch()?' null operator is used to avoid testing errors */
   useEffect(() => {
     darkModeMatch()?.addEventListener('change', darkModeListener);
     dispatch(setColorScheme(darkModeMatch()?.matches ? 'dark' : 'light'));
@@ -46,13 +49,16 @@ export function AppContent() {
         <ErrorBoundary fallback={<Error />}>
           <Popup />
           <Header />
-          <Main />
+          <Main isTest={isTest || false} />
           <Footer />
         </ErrorBoundary>
       </div>
     </div>
   );
 }
+AppContent.defaultProps = {
+  isTest: false,
+};
 
 /** HelmetProvider is here instead of main.tsx to avoid testing errors */
 function App() {

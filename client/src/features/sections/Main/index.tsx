@@ -27,10 +27,11 @@ const pageWrapper = (
   content: JSX.Element,
   pageUrl: string,
   pageTitle: string,
+  includeHeading: boolean,
 ) => {
   return (
     <>
-      <Heading pageUrl={pageUrl} pageTitle={pageTitle} />
+      {includeHeading && <Heading pageUrl={pageUrl} pageTitle={pageTitle} />}
       <main
         role="main"
         className="relative -top-[80px] min-h-dvh lg:-top-[88px]"
@@ -58,7 +59,10 @@ const pageRoutes: PageRoute[] = [
   ROUTES.pricing(),
 ];
 
-export default function Main() {
+interface IProps {
+  isTest: boolean;
+}
+export default function Main({ isTest }: IProps) {
   return (
     <>
       {/* deviceDomain() */}
@@ -72,6 +76,7 @@ export default function Main() {
             pageRoute.element,
             pageRoute.path,
             pageRoute.title,
+            !isTest,
           );
           return (
             <Route key={uuidv4()} path={pageRoute.path} element={element} />
